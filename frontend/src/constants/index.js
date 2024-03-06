@@ -1,4 +1,18 @@
-import { def, notice1, vid1, vid2, vid3, vid4 } from "../assets";
+import {
+  def,
+  e1,
+  e2,
+  j1,
+  j2,
+  notice1,
+  s1,
+  s2,
+  s3,
+  vid1,
+  vid2,
+  vid3,
+  vid4,
+} from "../assets";
 
 export const navLinks = [
   {
@@ -68,5 +82,59 @@ export const notices = [
   {
     title: "Meeting",
     img: def,
+  },
+];
+
+export const specConst = [
+  {
+    img: s1,
+    content: "20+ year of excellence",
+  },
+  {
+    img: s2,
+    content: "20 committee members",
+  },
+  {
+    img: s3,
+    content: "200+ members",
+  },
+];
+
+export const journalConst = [
+  {
+    img: j1,
+    title: "Journal of Social Inclusion Studies",
+    content:
+      "Journal of Social Inclusion Studies is a peer-reviewed interdisciplinary academic journal. It aims to promote informed debate and contributes to current knowledge and understanding on the nature, forms, and consequences of social exclusion and discrimination faced by marginalised groups and affirmative policies for the development of these groups. During the year 2019-20, IIDS published two issues of Journal. The Journal of Social Inclusion Studies is currently being published in collaboration with Sage Publication, Nepal.",
+  },
+  {
+    img: j2,
+    title: "Dalit Asmita",
+    content:
+      "Dalit Asmita, a quarterly journal (in Hindi), aims to promote literary work on Dalits and their struggle for identity, emancipation, and development. It features short stories, poems and articles, and provides an academic platform for discussions on Dalit empowerment. Four issues have been published during 2019-2020.",
+  },
+];
+
+export const eventsItems = [
+  {
+    img: e1,
+    stat: "onging",
+    date: "2024/01/19",
+    content:
+      "Lamahi Chamber of Commerce hosts a dazzling event, welcoming actors in vibrant attire. Amid cheers and awards, the night celebrates talent, fostering a vibrant arts community in Lamahi.",
+  },
+  {
+    img: e2,
+    stat: "onging",
+    date: "2024/01/19",
+    content:
+      "Lamahi Chamber of Commerce hosts a dazzling event, welcoming actors in vibrant attire. Amid cheers and awards, the night celebrates talent, fostering a vibrant arts community in Lamahi.",
+  },
+  {
+    img: e1,
+    stat: "onging",
+    date: "2024/01/19",
+    content:
+      "Lamahi Chamber of Commerce hosts a dazzling event, welcoming actors in vibrant attire. Amid cheers and awards, the night celebrates talent, fostering a vibrant arts community in Lamahi.",
   },
 ];

@@ -15,7 +15,9 @@ const Announcement = () => {
 
   return (
     <>
-      <div className="flex w-full h-[80px] flex gap-1 mt-4">
+      <div
+        className={`${styles.paddingX} sm:px-0 flex w-full h-[80px]  gap-1 mt-4`}
+      >
         <img
           src={announce}
           alt="announce bg"
