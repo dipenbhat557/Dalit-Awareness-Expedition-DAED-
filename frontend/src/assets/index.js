@@ -31,6 +31,7 @@ import g4 from "./glimpseImg/g4.png";
 import gmail from "./socialImg/gmail.png";
 import facebook from "./socialImg/facebook.png";
 import twitter from "./socialImg/twitter.png";
+import footerBg from "./footerBg.png";
 
 export {
   logo,
@@ -57,4 +58,5 @@ export {
   gmail,
   facebook,
   twitter,
+  footerBg,
 };
