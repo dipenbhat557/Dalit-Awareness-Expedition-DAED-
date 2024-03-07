@@ -38,12 +38,10 @@ const Glimpse = () => {
             DAED Committee in Dang
           </p>
         </div>
-
-        {/* ... Add similar blocks for Image 3 and Image 4 */}
       </div>
 
       {/* Add a separator or additional styling as needed */}
-      <p className="text-[#B7B7B7] text-[45px] font-bold my-2">
+      <p className="text-[#B7B7B7] text-[37px] font-bold my-2">
         "Empower. Elevate. Inspire. Thrive."
       </p>
 
