@@ -121,6 +121,7 @@ export const journalConst = [
 
 export const eventsItems = [
   {
+    title: "Promoting community led and community Land, architecture",
     img: e1,
     stat: "onging",
     date: "2024/01/19",
@@ -128,14 +129,24 @@ export const eventsItems = [
       "Lamahi Chamber of Commerce hosts a dazzling event, welcoming actors in vibrant attire. Amid cheers and awards, the night celebrates talent, fostering a vibrant arts community in Lamahi.",
   },
   {
+    title: "Promoting community led and community Land, architecture",
     img: e2,
     stat: "onging",
     date: "2024/01/19",
     content:
+      "The Climate Resilient Land-Agriculture campaign has been conducted in Lakshminia, Purano Kantibazar, and Naya Basti of Gaushala Municipality-12 under Madhesh Province, and Panchpokhari Thangpal Rural Municipality -2 Baruwa (Dale, Bolgaun, and Salme) in Sindhupalchok district under Bagmati Province with the facilitation of the Community Self-Reliance Service Centre supported by World Jewish Relief. This campaign, especially through local organizations and frontiers, will raise awareness, debate, lobby, community-led participatory context analysis, and risk-sensitive land use planning formulation. Furthermore, supports income-earning through livelihood programs and climate resilience activities. It will create an adaptive environment in collaboration with the local government.  This campaign will assist to prepare a plan at the community level to reduce the impact of climate change on the women and senior citizens of the community. Moreover, required support will be provided for climate-resilient agriculture as per the community’s plan. Despite the increasing crisis due to climate change, it is necessary to advance the development of the community. Therefore, the campaign will address the process of climate resilience, ease of capacity, and transformation, and will give the community the necessary motivation and knowledge to be aware of access to land, transformation, and climate resilience. Several practices of traditional agriculture practices are relevant and indispensable for the development of the agricultural sector. This will help to reduce the impact of climate change. Transformation of crops and livestock, mixed cropping practices, helping each-others on the farm, etc. are significant for climate-resilient land agriculture. The climate-resilient land-agriculture campaign will promote and implement local skills and knowledge, including community transformation, seed conservation, and climate change mitigation.",
+  },
+  {
+    title: "Promoting community led and community Land, architecture",
+    img: e1,
+    stat: "onging",
+    date: "2024/01/19",
+    content:
       "Lamahi Chamber of Commerce hosts a dazzling event, welcoming actors in vibrant attire. Amid cheers and awards, the night celebrates talent, fostering a vibrant arts community in Lamahi.",
   },
   {
-    img: e1,
+    title: "Promoting community led and community Land, architecture",
+    img: e2,
     stat: "onging",
     date: "2024/01/19",
     content:

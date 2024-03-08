@@ -85,7 +85,7 @@ const Navbar = ({ active }) => {
         <div className="dropdown-menu mt-2 left-[40%] p-3 rounded-b-xl rounded-r-xl text-black bg-slate-200 w-[14%] absolute z-30">
           <ul>
             <li className="hover:bg-[#D9D9D9]  click:bg-[#FFBF00] p-2 rounded-sm">
-              <a href="events/present" onClick={toggleDropdown2}>
+              <a href="/events/present" onClick={toggleDropdown2}>
                 Upcoming Events
               </a>
             </li>
