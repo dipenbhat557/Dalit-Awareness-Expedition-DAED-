@@ -1,5 +1,5 @@
 import { FiEye } from "react-icons/fi";
-import { eventBg } from "../assets";
+import { eventBg, pdf } from "../assets";
 import { eventGallery, events } from "../constants";
 import { styles } from "../styles";
 import Footer from "./Footer";
@@ -14,7 +14,7 @@ const PastEvents = () => {
       <HeroHeader active="events" />
       <SideHero title="Past Programs" img={eventBg} />
 
-      <div className={`w-full h-auto flex flex-col ${styles.padding} `}>
+      <div className={`w-full h-auto flex flex-col ${styles.padding} my-20`}>
         <div className="w-full h-[70px] flex items-center justify-center bg-slate-300">
           <div className="w-[23%] h-full flex items-center justify-center font-semibold border-r-2 border-black">
             Name of Programme
@@ -56,7 +56,7 @@ const PastEvents = () => {
               <div
                 className={`w-[18%] h-full flex items-center justify-center font-semibold  `}
               >
-                PDF
+                <img src={pdf} className="w-[50%] h-[50%] object-contain" />
               </div>
             </div>
           );
@@ -64,28 +64,41 @@ const PastEvents = () => {
       </div>
       <div className={`w-full h-auto flex flex-col ${styles.padding} `}>
         <p
-          className={` font-semibold text-[#000] bg-[#FFBF00] rounded-xl w-[20%]  py-2  text-center ${styles.sectionHeadText}`}
+          className={` font-semibold text-[#000] bg-[#FFBF00] rounded-xl mb-5 w-[20%]  py-2  text-center ${styles.sectionHeadText}`}
         >
           Gallery
         </p>
-        <div className="w-full h-auto flex flex-wrap justify-between items-center gap-5">
+        <div className="w-full h-auto flex flex-wrap justify-between items-center gap-2">
           {eventGallery.map((g, i) => {
             return (
               <div
-                className={`w-[45%] h-[500px] relative mt-5 flex ${
-                  index % 2 == 0 ? "justify-start" : "justify-end"
+                className={`w-[45%] h-[700px] relative flex ${
+                  i % 2 == 0 ? "items-start" : "items-end"
                 }`}
+                key={i}
               >
                 <img
                   src={g.img}
                   alt="Image 1"
-                  className="object-cover w-full h-[90%]"
+                  className="object-cover w-full h-[80%]"
                 />
-                <div className="w-full h-full bg-black absolute bg-opacity-50 " />
-                <div className="bg-white z-10 w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] top-[50%] bg-opacity-40 text-[#FFBF00] absolute text-3xl hover:bg-[#FFBF00] hover:text-white">
+                <div
+                  className={`w-full h-[80%] bg-black absolute bg-opacity-50 ${
+                    i % 2 == 0 ? "items-start" : "items-end"
+                  }`}
+                />
+                <div
+                  className={`bg-white z-10 w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] ${
+                    i % 2 == 0 ? " top-[40%]" : " top-[60%]"
+                  } bg-opacity-40 text-[#FFBF00] absolute text-3xl hover:bg-[#FFBF00] hover:text-white`}
+                >
                   <FiEye />
                 </div>
-                <p className="w-[50%] z-10 text-[18px] sm:text-[23px] font-thin text-white h-auto my-4 left-[50%] top-[70%] absolute">
+                <p
+                  className={`w-[50%] z-10 text-[18px] sm:text-[23px] font-thin text-white h-auto my-4 left-[50%]  ${
+                    i % 2 == 0 ? " top-[50%]" : " top-[70%]"
+                  } absolute`}
+                >
                   {g.title}
                 </p>
               </div>

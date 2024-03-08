@@ -34,6 +34,7 @@ import twitter from "./socialImg/twitter.png";
 import footerBg from "./footerBg.png";
 
 import eventBg from "./eventBg.png";
+import pdf from "./pdf.png";
 
 export {
   logo,
@@ -62,4 +63,5 @@ export {
   twitter,
   footerBg,
   eventBg,
+  pdf,
 };
