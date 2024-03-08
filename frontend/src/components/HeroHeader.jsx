@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import { logo } from "../assets";
 import { useNavigate } from "react-router-dom";
 
-const HeroHeader = () => {
+const HeroHeader = ({ active }) => {
   const navigate = useNavigate();
 
   return (
@@ -21,7 +21,7 @@ const HeroHeader = () => {
           </p>
         </div>
       </div>
-      <Navbar />
+      <Navbar active={active} />
     </>
   );
 };

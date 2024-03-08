@@ -33,6 +33,8 @@ import facebook from "./socialImg/facebook.png";
 import twitter from "./socialImg/twitter.png";
 import footerBg from "./footerBg.png";
 
+import eventBg from "./eventBg.png";
+
 export {
   logo,
   announce,
@@ -59,4 +61,5 @@ export {
   facebook,
   twitter,
   footerBg,
+  eventBg,
 };

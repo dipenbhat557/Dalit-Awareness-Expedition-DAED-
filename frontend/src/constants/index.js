@@ -2,6 +2,10 @@ import {
   def,
   e1,
   e2,
+  g1,
+  g2,
+  g3,
+  g4,
   j1,
   j2,
   notice1,
@@ -136,5 +140,65 @@ export const eventsItems = [
     date: "2024/01/19",
     content:
       "Lamahi Chamber of Commerce hosts a dazzling event, welcoming actors in vibrant attire. Amid cheers and awards, the night celebrates talent, fostering a vibrant arts community in Lamahi.",
+  },
+];
+
+const pastEvents = [
+  {
+    title: "Rahat",
+    partner: "Facebook",
+    area: "Morang",
+    duration: "2023",
+    link: "#",
+  },
+  {
+    title: "Rahat2",
+    partner: "Facebook",
+    area: "Dang",
+    duration: "2090",
+    link: "#",
+  },
+  {
+    title: "Rahat",
+    partner: "Insta",
+    area: "Butwal",
+    duration: "2002",
+    link: "#",
+  },
+  {
+    title: "Rahat2",
+    partner: "Facebook",
+    area: "Dhangadhi",
+    duration: "2004",
+    link: "#",
+  },
+];
+
+export const events = [pastEvents, eventsItems];
+
+export const eventGallery = [
+  {
+    img: g1,
+    title: "DAED committee with our staffs",
+  },
+  {
+    img: g2,
+    title: "DAED committee with our staffs",
+  },
+  {
+    img: g3,
+    title: "DAED committee with our staffs",
+  },
+  {
+    img: g4,
+    title: "DAED committee with our staffs",
+  },
+  {
+    img: g1,
+    title: "DAED committee with our staffs",
+  },
+  {
+    img: g1,
+    title: "DAED committee with our staffs",
   },
 ];

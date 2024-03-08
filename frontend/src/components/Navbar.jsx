@@ -3,11 +3,10 @@ import { navLinks } from "../constants";
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
 import { BiSolidDownArrow } from "react-icons/bi";
 
-const Navbar = () => {
+const Navbar = ({ active }) => {
   const [showDropdown1, setShowDropdown1] = useState(false);
   const [showDropdown2, setShowDropdown2] = useState(false);
   const [toggle, setToggle] = useState(false);
-  const [active, setActive] = useState("home");
 
   const toggleDropdown1 = () => {
     setShowDropdown1(!showDropdown1);
@@ -92,7 +91,7 @@ const Navbar = () => {
               </a>
             </li>
             <li className="hover:bg-[#D9D9D9]  click:bg-[#FFBF00] p-2 rounded-sm">
-              <a href="#" onClick={toggleDropdown2}>
+              <a href="/events/past" onClick={toggleDropdown2}>
                 Past Events
               </a>
             </li>

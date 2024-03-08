@@ -13,7 +13,7 @@ import HeroHeader from "./HeroHeader";
 const HomePage = () => {
   return (
     <>
-      <HeroHeader />
+      <HeroHeader active="home" />
       <Hero />
       <Announcement />
       <Specification />
