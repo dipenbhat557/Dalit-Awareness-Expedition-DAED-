@@ -21,7 +21,7 @@ const Event = () => {
       setCurrentEvents(
         eventsItems
           ?.slice(startIndex, endIndex)
-          .concat(eventsItems?.slice(0, nextIndex)),
+          .concat(eventsItems?.slice(0, nextIndex))
       );
       console.log("Current events : ", currentEvents);
     } else {
@@ -79,7 +79,7 @@ const Event = () => {
                 <p className="w-full h-[10%] pr-3 text-end mt-2">
                   {event?.date || "Loading..."}
                 </p>
-                <p className="w-full h-[90%] p-3 sm:leading-loose text-[14px] sm:text-[20px]">
+                <p className="w-full h-[90%] p-3 sm:leading-loose line-clamp-6 text-[14px] sm:text-[20px]">
                   {event?.content || "Loading..."}
                 </p>
               </div>
@@ -91,7 +91,7 @@ const Event = () => {
       <button
         className="text-[18px] sm:text-[23.42px] border-4 border-[#FFBF00] hover:bg-[#FFBF00] hover:text-white px-2 sm:px-5 rounded-xl py-1 w-[30%] sm:w-[14%] h-[50px] sm:h-[60px] mt-10"
         onClick={() => {
-          navigate("#");
+          navigate("/event/present");
         }}
       >
         More

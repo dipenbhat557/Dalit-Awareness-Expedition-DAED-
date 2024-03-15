@@ -1,8 +1,10 @@
 import React from "react";
 import { styles } from "../styles";
 import { journalConst } from "../constants";
+import { useNavigate } from "react-router-dom";
 
 const Journal = () => {
+  const navigate = useNavigate();
   return (
     <div className={`${styles.padding} w-full h-auto flex flex-col gap-6 `}>
       <p className={`font-semibold  text-[#FFBF00] ${styles.sectionHeadText}`}>
@@ -12,7 +14,8 @@ const Journal = () => {
       {journalConst.map((journal, index) => {
         return (
           <div
-            className="flex justify-between items-center w-full bg-[#FFBF00] p-3 h-[500px] rounded-3xl"
+            onClick={() => navigate("/afterjournal", { state: { id: index } })}
+            className="flex cursor-pointer justify-between items-center w-full bg-[#FFBF00] p-3 h-[500px] rounded-3xl"
             key={index}
           >
             <img src={journal.img} className="w-[25%] h-[80%] object-contain" />
@@ -24,7 +27,10 @@ const Journal = () => {
         );
       })}
       <div className="w-full h-[100px] flex items-center justify-center">
-        <button className="px-44 py-3 rounded-2xl border-2 border-[#FFBF00] font-semibold hover:text-white text-[18px] hover:bg-[#FFBF00]">
+        <button
+          onClick={() => navigate("/journals")}
+          className="px-44 py-3 rounded-2xl border-2 border-[#FFBF00] font-semibold hover:text-white text-[18px] hover:bg-[#FFBF00]"
+        >
           More
         </button>
       </div>

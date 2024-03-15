@@ -4,6 +4,8 @@ import HomePage from "./HomePage";
 import PastEvents from "./PastEvents";
 import PresentEvents from "./PresentEvents";
 import AfterEvent from "./AfterEvent";
+import JournalPage from "./JournalPage";
+import AfterJournalPage from "./AfterJournalPage";
 
 const Pages = () => {
   return (
@@ -13,6 +15,8 @@ const Pages = () => {
         <Route path="/events/past" element={<PastEvents />} />
         <Route path="/events/present" element={<PresentEvents />} />
         <Route path="/afterevent" element={<AfterEvent />} />
+        <Route path="/journals" element={<JournalPage />} />
+        <Route path="/afterjournal" element={<AfterJournalPage />} />
       </Routes>
     </BrowserRouter>
   );

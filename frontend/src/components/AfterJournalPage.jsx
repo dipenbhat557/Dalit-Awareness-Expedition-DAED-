@@ -1,20 +1,18 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { eventBg, pdf } from "../assets";
 import HeroHeader from "./HeroHeader";
 import SideHero from "./SideHero";
-import { eventBg, pdf } from "../assets";
+import { journalConst } from "../constants";
 import { styles } from "../styles";
-import { events } from "../constants";
 import Footer from "./Footer";
 
-// location?.state?.id;
-
-const AfterEvent = () => {
+const AfterJournalPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
   return (
     <div className="w-full h-auto flex flex-col">
-      <HeroHeader active="events" />
+      <HeroHeader active="journals" />
       <SideHero title="Ongoing Projects" img={eventBg} />
 
       <div
@@ -24,7 +22,7 @@ const AfterEvent = () => {
           <div className="w-[40%] flex flex-col h-[550px] justify-between">
             <div className="w-full h-[75%]">
               <img
-                src={events?.[1]?.[location?.state?.id]?.img}
+                src={journalConst?.[location?.state?.id]?.img}
                 className=" rounded-t-lg h-full w-full object-cover"
               />
             </div>
@@ -39,17 +37,13 @@ const AfterEvent = () => {
             </div>
           </div>
           <div className={`flex w-[55%] h-auto flex-col gap-3 `}>
-            <p className={`text-[20px]`}>
-              {events?.[1]?.[location?.state?.id]?.date}
-            </p>
-
             <p className={`text-[23px] font-semibold font-sans `}>
-              {events?.[1]?.[location?.state?.id]?.title}
+              {journalConst?.[location?.state?.id]?.title}
             </p>
 
-            <div className="border-2 border-slate-500 rounded-md p-2">
+            <div className="border-2 border-slate-500 rounded-md text-justify p-2">
               <p className={`text-[16px] `}>
-                {events?.[1]?.[location?.state?.id]?.content}
+                {journalConst?.[location?.state?.id]?.content}
               </p>
             </div>
           </div>
@@ -57,7 +51,7 @@ const AfterEvent = () => {
         <div className="w-full flex justify-center">
           <button
             className=" px-16 border-2 border-[#FFBF00] rounded-lg font-semibold hover:text-white hover:bg-[#FFBF00]"
-            onClick={() => navigate("/events/present")}
+            onClick={() => navigate("/journals")}
           >
             Back
           </button>
@@ -67,4 +61,4 @@ const AfterEvent = () => {
     </div>
   );
 };
-export default AfterEvent;
+export default AfterJournalPage;

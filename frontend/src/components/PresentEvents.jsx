@@ -21,7 +21,7 @@ const PresentEvents = () => {
             <div
               key={index}
               onClick={() => navigate("/afterevent", { state: { id: index } })}
-              className="cursor-pointer flex flex-col justify-around h-[500px] sm:h-[650px] w-full sm:w-[28%] rounded-lg hover:bg-[#FFBF00] hover:text-white"
+              className="cursor-pointer flex flex-col justify-around h-[500px] sm:h-[650px] line-clamp-6 w-full sm:w-[28%] rounded-lg hover:bg-[#FFBF00] hover:text-white"
             >
               <div className="w-full h-[50%] relative">
                 <img
