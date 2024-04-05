@@ -42,12 +42,12 @@ export const navLinks = [
   {
     id: "contactus",
     title: "CONTACT US",
-    route: "#",
+    route: "/contactus",
   },
   {
     id: "supportus",
     title: "SUPPORT US",
-    route: "#",
+    route: "/support",
   },
 ];
 
