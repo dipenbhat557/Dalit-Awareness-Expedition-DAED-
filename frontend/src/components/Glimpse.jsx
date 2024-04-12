@@ -20,7 +20,7 @@ const Glimpse = () => {
           <img src={g1} alt="Image 1" className="object-cover w-full h-full" />
           <div className="w-full h-full bg-black absolute bg-opacity-40 " />
           <div className="bg-white w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] top-[50%] bg-opacity-40 text-[#FFBF00] absolute text-3xl hover:bg-[#FFBF00] hover:text-white">
-            <FiEye />
+            <FiEye className="cursor-pointer" />
           </div>
           <p className="w-[50%] text-[13px] sm:text-[23px] font-thin text-white h-auto my-4 left-[50%] top-[70%] absolute">
             DAED Committee in Dang
@@ -32,7 +32,7 @@ const Glimpse = () => {
           <img src={g2} alt="Image 2" className="object-cover w-full h-full" />
           <div className="w-full h-full bg-black absolute bg-opacity-40 " />
           <div className="bg-white w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] top-[50%] bg-opacity-40 text-[#FFBF00] absolute text-3xl hover:bg-[#FFBF00] hover:text-white">
-            <FiEye />
+            <FiEye className="cursor-pointer" />
           </div>
           <p className="w-[50%] text-[13px] sm:text-[23px] font-thin text-white h-auto my-4 left-[50%] top-[70%] absolute">
             DAED Committee in Dang
@@ -51,7 +51,7 @@ const Glimpse = () => {
           <img src={g3} alt="Image 3" className=" object-cover w-full h-full" />
           <div className="w-full h-full bg-black absolute bg-opacity-40 " />
           <div className="bg-white w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] top-[45%] bg-opacity-40 text-[#FFBF00] absolute text-3xl hover:bg-[#FFBF00] hover:text-white">
-            <FiEye />
+            <FiEye className="cursor-pointer" />
           </div>
           <p className="w-[50%] text-[13px] sm:text-[23px] font-thin text-white h-auto my-4 left-[50%] top-[70%] absolute">
             DAED Committee in Dang
@@ -63,7 +63,7 @@ const Glimpse = () => {
           <img src={g4} alt="Image 4" className=" object-cover w-full h-full" />
           <div className="w-full h-full bg-black absolute bg-opacity-40 " />
           <div className="bg-white w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] top-[50%] bg-opacity-40 text-[#FFBF00] absolute text-3xl hover:bg-[#FFBF00] hover:text-white">
-            <FiEye />
+            <FiEye className="cursor-pointer" />
           </div>
           <p className="w-[50%] text-[13px] sm:text-[23px] font-thin text-white h-auto my-4 left-[50%] top-[70%] absolute">
             DAED Committee in Dang

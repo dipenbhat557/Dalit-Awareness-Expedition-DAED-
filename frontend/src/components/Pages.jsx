@@ -6,6 +6,7 @@ import PresentEvents from "./PresentEvents";
 import AfterEvent from "./AfterEvent";
 import JournalPage from "./JournalPage";
 import AfterJournalPage from "./AfterJournalPage";
+import AboutDAED from "./AboutDAED";
 
 const Pages = () => {
   return (
@@ -17,6 +18,7 @@ const Pages = () => {
         <Route path="/afterevent" element={<AfterEvent />} />
         <Route path="/journals" element={<JournalPage />} />
         <Route path="/afterjournal" element={<AfterJournalPage />} />
+        <Route path="/aboutDAED" element={<AboutDAED />} />
       </Routes>
     </BrowserRouter>
   );

@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { navLinks } from "../constants";
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
 import { BiSolidDownArrow } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ active }) => {
   const [showDropdown1, setShowDropdown1] = useState(false);
   const [showDropdown2, setShowDropdown2] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDropdown1 = () => {
     setShowDropdown1(!showDropdown1);
@@ -16,6 +18,11 @@ const Navbar = ({ active }) => {
   const toggleDropdown2 = () => {
     setShowDropdown2(!showDropdown2);
     setShowDropdown1(false);
+  };
+
+  const handleAboutDAED = () => {
+    toggleDropdown1;
+    navigate("/aboutDAED");
   };
 
   return (
@@ -53,7 +60,7 @@ const Navbar = ({ active }) => {
         <div className="dropdown-menu mt-2 left-[22%] p-3 rounded-b-xl rounded-r-xl text-black bg-slate-200 w-[16%] absolute z-30">
           <ul>
             <li className="hover:bg-[#D9D9D9] click:bg-[#FFBF00] p-2 rounded-sm">
-              <a href="#" onClick={toggleDropdown1}>
+              <a href="#" onClick={handleAboutDAED}>
                 About DAED
               </a>
             </li>
