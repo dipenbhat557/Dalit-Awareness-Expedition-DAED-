@@ -6,7 +6,7 @@ const Subscription = () => {
   return (
     <motion.div
       variants={fadeIn("up", "spring", 0.5, 0.75)}
-      className="flex flex-col w-[100%] h-[330px] sm:h-[300px] justify-center items-center text-white mt-6 bg-gradient-to-b from-[#FFBF00] to-[#f5e9bf] pt-4"
+      className="flex flex-col w-[100%] h-[330px] sm:h-[300px] justify-center items-center text-white bg-gradient-to-b from-[#FFBF00] to-[#f5e9bf] pt-4"
     >
       <div className="flex flex-row w-[25%] items-center justify-center mt-2">
         <div className="w-[8%] h-[5px] border-b-4 border-[#FFAF00]  mr-2 flex-grow" />

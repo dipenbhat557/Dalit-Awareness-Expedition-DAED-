@@ -8,7 +8,6 @@ const Navbar = ({ active }) => {
   const [showDropdown1, setShowDropdown1] = useState(false);
   const [showDropdown2, setShowDropdown2] = useState(false);
   const [toggle, setToggle] = useState(false);
-  const navigate = useNavigate();
 
   const toggleDropdown1 = () => {
     setShowDropdown1(!showDropdown1);
@@ -18,11 +17,6 @@ const Navbar = ({ active }) => {
   const toggleDropdown2 = () => {
     setShowDropdown2(!showDropdown2);
     setShowDropdown1(false);
-  };
-
-  const handleAboutDAED = () => {
-    toggleDropdown1;
-    navigate("/aboutDAED");
   };
 
   return (
@@ -60,28 +54,13 @@ const Navbar = ({ active }) => {
         <div className="dropdown-menu mt-2 left-[22%] p-3 rounded-b-xl rounded-r-xl text-black bg-slate-200 w-[16%] absolute z-30">
           <ul>
             <li className="hover:bg-[#D9D9D9] click:bg-[#FFBF00] p-2 rounded-sm">
-              <a href="#" onClick={handleAboutDAED}>
+              <a href="/about/us" onClick={toggleDropdown1}>
                 About DAED
               </a>
             </li>
             <li className="hover:bg-[#D9D9D9]  click:bg-[#FFBF00] p-2 rounded-sm">
-              <a href="#" onClick={toggleDropdown1}>
+              <a href="/about/team" onClick={toggleDropdown1}>
                 Our Team
-              </a>
-            </li>
-            <li className="hover:bg-[#D9D9D9]  click:bg-[#FFBF00] p-2 rounded-sm">
-              <a href="#" onClick={toggleDropdown1}>
-                Working Districts
-              </a>
-            </li>
-            <li className="hover:bg-[#D9D9D9]  click:bg-red-[#FFBF00] p-2 rounded-sm">
-              <a href="#" onClick={toggleDropdown1}>
-                Structure
-              </a>
-            </li>
-            <li className="hover:bg-[#D9D9D9]  click:bg-[#FFBF00] p-2 rounded-sm">
-              <a href="#" onClick={toggleDropdown1}>
-                Our Partners
               </a>
             </li>
           </ul>

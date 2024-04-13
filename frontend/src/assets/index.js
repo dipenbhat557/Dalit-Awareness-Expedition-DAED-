@@ -36,6 +36,15 @@ import footerBg from "./footerBg.png";
 import eventBg from "./eventBg.png";
 import pdf from "./pdf.png";
 
+import a1 from "./achievementImg/a1.svg";
+import a2 from "./achievementImg/a2.svg";
+import a3 from "./achievementImg/a3.svg";
+import a4 from "./achievementImg/a4.svg";
+
+import objective from "./missionImg/objective.png";
+import strength from "./missionImg/strength.png";
+import vision from "./missionImg/vision.png";
+
 export {
   logo,
   announce,
@@ -64,4 +73,11 @@ export {
   footerBg,
   eventBg,
   pdf,
+  a1,
+  a2,
+  a3,
+  a4,
+  objective,
+  strength,
+  vision,
 };

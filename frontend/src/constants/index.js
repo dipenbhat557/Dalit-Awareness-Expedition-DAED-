@@ -1,4 +1,8 @@
 import {
+  a1,
+  a2,
+  a3,
+  a4,
   def,
   e1,
   e2,
@@ -211,5 +215,51 @@ export const eventGallery = [
   {
     img: g1,
     title: "DAED committee with our staffs",
+  },
+];
+
+export const achievementItems = [
+  {
+    img: a1,
+    count: "2,245,341",
+    content: "Members",
+  },
+  {
+    img: a2,
+    count: "46,328",
+    content: "Committee members",
+  },
+  {
+    img: a3,
+    count: "828,867",
+    content: "Money donated",
+  },
+  {
+    img: a4,
+    count: "1000",
+    content: "Places covered",
+  },
+];
+
+export const teamDAED = [
+  {
+    img: g1,
+    name: "Dipendra Bhatta",
+    content: "Bro is boring",
+  },
+  {
+    img: g1,
+    name: "Dipendra Bhatta",
+    content: "Bro is boring",
+  },
+  {
+    img: g1,
+    name: "Dipendra Bhatta",
+    content: "Bro is boring",
+  },
+  {
+    img: g1,
+    name: "Dipendra Bhatta",
+    content: "Bro is boring",
   },
 ];
