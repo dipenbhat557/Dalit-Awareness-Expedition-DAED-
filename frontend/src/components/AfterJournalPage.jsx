@@ -9,6 +9,9 @@ import Footer from "./Footer";
 const AfterJournalPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const journalConst = useFetch(
+    `${import.meta.env.VITE_APP_API_ROOT}/journals`
+  );
 
   return (
     <div className="w-full h-auto flex flex-col">
@@ -22,7 +25,7 @@ const AfterJournalPage = () => {
           <div className="w-[40%] flex flex-col h-[550px] justify-between">
             <div className="w-full h-[75%]">
               <img
-                src={journalConst?.[location?.state?.id]?.img}
+                src={journalConst?.[location?.state?.id]?.imageUrl}
                 className=" rounded-t-lg h-full w-full object-cover"
               />
             </div>
@@ -38,12 +41,12 @@ const AfterJournalPage = () => {
           </div>
           <div className={`flex w-[55%] h-auto flex-col gap-3 `}>
             <p className={`text-[23px] font-semibold font-sans `}>
-              {journalConst?.[location?.state?.id]?.title}
+              {journalConst?.[location?.state?.id]?.title?.rendered}
             </p>
 
             <div className="border-2 border-slate-500 rounded-md text-justify p-2">
               <p className={`text-[16px] `}>
-                {journalConst?.[location?.state?.id]?.content}
+                {journalConst?.[location?.state?.id]?.content?.rendered}
               </p>
             </div>
           </div>

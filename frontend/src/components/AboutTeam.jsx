@@ -7,6 +7,8 @@ import SideHero from "./SideHero";
 import Subscription from "./Subscription";
 
 const AboutTeam = () => {
+  let teamDAED = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/members`);
+
   return (
     <div className="w-full h-auto flex flex-col">
       <HeroHeader active="aboutus" />
@@ -39,13 +41,17 @@ const AboutTeam = () => {
                 >
                   <div className="w-full h-[70%]">
                     <img
-                      src={item?.img}
+                      src={item?.imageUrl}
                       alt="team img"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <p className="font-medium text-[18px] px-3">{item?.name}</p>
-                  <p className="text-center px-3 pb-3">{item?.content}</p>
+                  <p className="font-medium text-[18px] px-3">
+                    {item?.title?.rendered}
+                  </p>
+                  <p className="text-center px-3 pb-3">
+                    {item?.content?.rendered}
+                  </p>
                 </div>
               );
             })}
