@@ -23,7 +23,7 @@ const Event = () => {
           ?.slice(startIndex, endIndex)
           .concat(eventsItems?.slice(0, nextIndex))
       );
-      console.log("Current events : ", currentEvents);
+      // console.log("Current events : ", currentEvents);
     } else {
       setCurrentEvents(eventsItems?.slice(startIndex, endIndex));
     }
