@@ -8,7 +8,8 @@ import JournalPage from "./JournalPage";
 import AfterJournalPage from "./AfterJournalPage";
 import AboutDAED from "./AboutDAED";
 import AboutTeam from "./AboutTeam";
-
+import Contact from "./Contact";
+import Support from "./Support";
 const Pages = () => {
   return (
     <BrowserRouter>
@@ -21,6 +22,8 @@ const Pages = () => {
         <Route path="/afterjournal" element={<AfterJournalPage />} />
         <Route path="/about/us" element={<AboutDAED />} />
         <Route path="/about/team" element={<AboutTeam />} />
+        <Route path="/contactus" element={<Contact />} />
+        <Route path="/supportus" element={<Support />} />
       </Routes>
     </BrowserRouter>
   );
