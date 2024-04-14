@@ -2,7 +2,7 @@ import { Suspense } from "react";
 
 const SideHero = ({ title, img }) => {
   return (
-    <div className="w-full h-[500px] sm:h-[616px] relative">
+    <div className="w-full h-[500px] sm:h-[550px] relative">
       <img
         src={img}
         alt="Past Events Bg"

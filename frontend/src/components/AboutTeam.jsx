@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import HeroHeader from "./HeroHeader";
 import SideHero from "./SideHero";
 import Subscription from "./Subscription";
+import useFetch from "./UseFetch";
 
 const AboutTeam = () => {
   let teamDAED = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/members`);
@@ -32,14 +33,14 @@ const AboutTeam = () => {
 
         <div className="flex flex-col gap-8 w-full h-auto">
           <p className="text-[20px] font-semibold">Meet out Team DAED</p>
-          <div className="w-full justify-between gap-6 h-auto  flex flex-wrap ">
+          <div className="w-full justify-between gap-6 h-auto  flex flex-wrap my-4">
             {teamDAED?.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="w-[30%] h-[300px]  flex flex-col justify-between gap-3 hover:bg-[#5E490B] hover:text-white"
+                  className="w-[30%] h-[450px]  flex flex-col justify-between gap-3 hover:bg-[#5E490B] hover:text-white"
                 >
-                  <div className="w-full h-[70%]">
+                  <div className="w-full h-[75%]">
                     <img
                       src={item?.imageUrl}
                       alt="team img"
@@ -49,9 +50,12 @@ const AboutTeam = () => {
                   <p className="font-medium text-[18px] px-3">
                     {item?.title?.rendered}
                   </p>
-                  <p className="text-center px-3 pb-3">
-                    {item?.content?.rendered}
-                  </p>
+                  <p
+                    className="text-center px-3 pb-3"
+                    dangerouslySetInnerHTML={{
+                      __html: item?.content?.rendered,
+                    }}
+                  ></p>
                 </div>
               );
             })}

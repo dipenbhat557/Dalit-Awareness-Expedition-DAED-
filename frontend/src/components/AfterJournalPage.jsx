@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { eventBg, pdf } from "../assets";
+import { def, eventBg, pdf } from "../assets";
 import HeroHeader from "./HeroHeader";
 import SideHero from "./SideHero";
 import { journalConst } from "../constants";
@@ -26,7 +26,7 @@ const AfterJournalPage = () => {
           <div className="w-[40%] flex flex-col h-[550px] justify-between">
             <div className="w-full h-[75%]">
               <img
-                src={journalConst?.[location?.state?.id]?.imageUrl}
+                src={journalConst?.[location?.state?.id]?.imageUrl || def}
                 className=" rounded-t-lg h-full w-full object-cover"
               />
             </div>
@@ -37,6 +37,12 @@ const AfterJournalPage = () => {
               <img
                 src={pdf}
                 className="h-[70%] w-[20%] object-contain cursor-pointer"
+                onClick={() =>
+                  window.open(
+                    journalConst?.[location?.state?.id]?.imageUrl,
+                    "_blank"
+                  )
+                }
               />
             </div>
           </div>
@@ -46,9 +52,13 @@ const AfterJournalPage = () => {
             </p>
 
             <div className="border-2 border-slate-500 rounded-md text-justify p-2">
-              <p className={`text-[16px] `}>
-                {journalConst?.[location?.state?.id]?.content?.rendered}
-              </p>
+              <p
+                className={`text-[16px] `}
+                dangerouslySetInnerHTML={{
+                  __html:
+                    journalConst?.[location?.state?.id]?.content?.rendered,
+                }}
+              ></p>
             </div>
           </div>
         </div>

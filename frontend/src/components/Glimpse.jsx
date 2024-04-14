@@ -1,11 +1,11 @@
 import React from "react";
 import { styles } from "../styles";
-import { motion } from "framer-motion";
-import { slideIn } from "../utils/motion";
-import { g1, g2, g3, g4 } from "../assets";
+import { def } from "../assets";
 import { FiEye } from "react-icons/fi";
+import useFetch from "./UseFetch";
 
 const Glimpse = () => {
+  const glimpses = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/glimpses`);
   return (
     <div className={`${styles.padding} w-full h-[1050px] relative`}>
       <p
@@ -17,25 +17,39 @@ const Glimpse = () => {
       <div className="w-full h-[40%] flex justify-between">
         {/* Image 1 */}
         <div className="w-[45%] h-full relative flex justify-center">
-          <img src={g1} alt="Image 1" className="object-cover w-full h-full" />
+          <img
+            src={glimpses?.[0]?.imageUrl || def}
+            alt="Image 1"
+            className="object-cover w-full h-full"
+          />
           <div className="w-full h-full bg-black absolute bg-opacity-40 " />
           <div className="bg-white w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] top-[50%] bg-opacity-40 text-[#FFBF00] absolute text-3xl hover:bg-[#FFBF00] hover:text-white">
-            <FiEye className="cursor-pointer" />
+            <FiEye
+              onClick={() => window.open(glimpses?.[0]?.imageUrl, "_blank")}
+              className="cursor-pointer"
+            />
           </div>
           <p className="w-[50%] text-[13px] sm:text-[23px] font-thin text-white h-auto my-4 left-[50%] top-[70%] absolute">
-            DAED Committee in Dang
+            {glimpses?.[0]?.title?.rendered}
           </p>
         </div>
 
         {/* Image 2 */}
         <div className="w-[45%] h-full relative flex justify-center mt-12">
-          <img src={g2} alt="Image 2" className="object-cover w-full h-full" />
+          <img
+            src={glimpses?.[1]?.imageUrl || def}
+            alt="Image 2"
+            className="object-cover w-full h-full"
+          />
           <div className="w-full h-full bg-black absolute bg-opacity-40 " />
           <div className="bg-white w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] top-[50%] bg-opacity-40 text-[#FFBF00] absolute text-3xl hover:bg-[#FFBF00] hover:text-white">
-            <FiEye className="cursor-pointer" />
+            <FiEye
+              onClick={() => window.open(glimpses?.[1]?.imageUrl, "_blank")}
+              className="cursor-pointer"
+            />
           </div>
           <p className="w-[50%] text-[13px] sm:text-[23px] font-thin text-white h-auto my-4 left-[50%] top-[70%] absolute">
-            DAED Committee in Dang
+            {glimpses?.[1]?.title?.rendered}
           </p>
         </div>
       </div>
@@ -48,25 +62,39 @@ const Glimpse = () => {
       <div className="w-full h-[40%] flex justify-between">
         {/* Image 3 */}
         <div className="w-[45%] h-full relative flex justify-center  mt-12">
-          <img src={g3} alt="Image 3" className=" object-cover w-full h-full" />
+          <img
+            src={glimpses?.[2]?.imageUrl || def}
+            alt="Image 3"
+            className=" object-cover w-full h-full"
+          />
           <div className="w-full h-full bg-black absolute bg-opacity-40 " />
           <div className="bg-white w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] top-[45%] bg-opacity-40 text-[#FFBF00] absolute text-3xl hover:bg-[#FFBF00] hover:text-white">
-            <FiEye className="cursor-pointer" />
+            <FiEye
+              onClick={() => window.open(glimpses?.[2]?.imageUrl, "_blank")}
+              className="cursor-pointer"
+            />
           </div>
           <p className="w-[50%] text-[13px] sm:text-[23px] font-thin text-white h-auto my-4 left-[50%] top-[70%] absolute">
-            DAED Committee in Dang
+            {glimpses?.[2]?.title?.rendered}
           </p>
         </div>
 
         {/* Image 4 */}
         <div className="w-[45%] h-full relative flex justify-center">
-          <img src={g4} alt="Image 4" className=" object-cover w-full h-full" />
+          <img
+            src={glimpses?.[3]?.imageUrl || def}
+            alt="Image 4"
+            className=" object-cover w-full h-full"
+          />
           <div className="w-full h-full bg-black absolute bg-opacity-40 " />
           <div className="bg-white w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] top-[50%] bg-opacity-40 text-[#FFBF00] absolute text-3xl hover:bg-[#FFBF00] hover:text-white">
-            <FiEye className="cursor-pointer" />
+            <FiEye
+              className="cursor-pointer"
+              onClick={() => window.open(glimpses?.[3]?.imageUrl, "_blank")}
+            />
           </div>
           <p className="w-[50%] text-[13px] sm:text-[23px] font-thin text-white h-auto my-4 left-[50%] top-[70%] absolute">
-            DAED Committee in Dang
+            {glimpses?.[3]?.title?.rendered}
           </p>
         </div>
       </div>

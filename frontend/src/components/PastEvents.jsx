@@ -7,8 +7,12 @@ import HeroHeader from "./HeroHeader";
 import Navbar from "./Navbar";
 import SideHero from "./SideHero";
 import Subscription from "./Subscription";
+import useFetch from "./UseFetch";
 
 const PastEvents = () => {
+  let count = 0;
+  let events = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/events`);
+  let glimpses = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/glimpses`);
   return (
     <div className="w-full h-auto flex flex-col">
       <HeroHeader active="events" />
@@ -26,40 +30,47 @@ const PastEvents = () => {
             Area Coverage
           </div>
           <div className="w-[18%] h-full flex items-center justify-center font-semibold border-r-2 border-black">
-            Duration
+            Date
           </div>
           <div className="w-[18%] h-full flex items-center justify-center font-semibold ">
             PDF
           </div>
         </div>
 
-        {events?.[0]?.map((event, index) => {
-          return (
-            <div
-              className={`w-full h-[70px] flex items-center justify-center ${
-                index % 2 == 0 ? " " : "bg-slate-300"
-              } `}
-              key={index}
-            >
-              <div className="w-[23%] h-full flex items-center justify-center font-semibold border-r-2 border-black">
-                {event?.title}
-              </div>
-              <div className="w-[18%] h-full flex items-center justify-center font-semibold border-r-2 border-black">
-                {event?.partner}
-              </div>
-              <div className="w-[23%] h-full flex items-center justify-center font-semibold border-r-2 border-black">
-                {event?.area}
-              </div>
-              <div className="w-[18%] h-full flex items-center justify-center font-semibold border-r-2 border-black">
-                {event?.duration}
-              </div>
+        {events?.map((event, index) => {
+          if (event?.["_event_stat"] === "completed") {
+            count = count + 1;
+            return (
               <div
-                className={`w-[18%] h-full flex items-center justify-center font-semibold  `}
+                className={`w-full h-[70px] flex items-center justify-center ${
+                  count % 2 == 1 ? " " : "bg-slate-300"
+                } `}
+                key={index}
               >
-                <img src={pdf} className="w-[50%] h-[50%] object-contain" />
+                <div className="w-[23%] h-full flex items-center justify-center font-semibold border-r-2 border-black">
+                  {event?.title?.rendered}
+                </div>
+                <div className="w-[18%] h-full flex items-center justify-center font-semibold border-r-2 border-black">
+                  {event?.["_event_partner"]}
+                </div>
+                <div className="w-[23%] h-full flex items-center justify-center font-semibold border-r-2 border-black">
+                  {event?.["_event_area"]}
+                </div>
+                <div className="w-[18%] h-full flex items-center justify-center font-semibold border-r-2 border-black">
+                  {event?.["_event_date"]}
+                </div>
+                <div
+                  className={`w-[18%] h-full flex items-center justify-center font-semibold  `}
+                >
+                  <img
+                    src={pdf}
+                    onClick={() => window.open(event?.imageUrl, "_blank")}
+                    className="w-[50%] h-[50%] object-contain"
+                  />
+                </div>
               </div>
-            </div>
-          );
+            );
+          }
         })}
       </div>
       <div className={`w-full h-auto flex flex-col ${styles.padding} `}>
@@ -69,7 +80,7 @@ const PastEvents = () => {
           Gallery
         </p>
         <div className="w-full h-auto flex flex-wrap justify-between items-center gap-2">
-          {eventGallery.map((g, i) => {
+          {glimpses?.map((g, i) => {
             return (
               <div
                 className={`w-[45%] h-[700px] relative flex ${
@@ -78,7 +89,7 @@ const PastEvents = () => {
                 key={i}
               >
                 <img
-                  src={g.img}
+                  src={g?.imageUrl || def}
                   alt="Image 1"
                   className="object-cover w-full h-[80%]"
                 />
@@ -92,14 +103,14 @@ const PastEvents = () => {
                     i % 2 == 0 ? " top-[40%]" : " top-[60%]"
                   } bg-opacity-40 text-[#FFBF00] absolute text-3xl hover:bg-[#FFBF00] hover:text-white`}
                 >
-                  <FiEye />
+                  <FiEye onClick={() => window.open(g?.imageUrl, "_blank")} />
                 </div>
                 <p
                   className={`w-[50%] z-10 text-[18px] sm:text-[23px] font-thin text-white h-auto my-4 left-[50%]  ${
                     i % 2 == 0 ? " top-[50%]" : " top-[70%]"
                   } absolute`}
                 >
-                  {g.title}
+                  {g?.title?.rendered}
                 </p>
               </div>
             );

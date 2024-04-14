@@ -14,8 +14,8 @@ const Pages = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/events/past" element={<PastEvents />} />
-        <Route path="/events/present" element={<PresentEvents />} />
+        <Route path="/event/past" element={<PastEvents />} />
+        <Route path="/event/present" element={<PresentEvents />} />
         <Route path="/afterevent" element={<AfterEvent />} />
         <Route path="/journals" element={<JournalPage />} />
         <Route path="/afterjournal" element={<AfterJournalPage />} />

@@ -16,17 +16,19 @@ const Event = () => {
 
   // Function to update the current events based on the currentIndex
   const updateCurrentEvents = () => {
+    // console.log("Current index is ", currentIndex);
     const startIndex = currentIndex;
     const endIndex = startIndex + 3;
     const nextIndex = endIndex % eventsItems?.length;
+    // console.log("Start index is ", startIndex, " end index is ", endIndex);
     if (endIndex !== eventsItems?.length - 1) {
       setCurrentEvents(
         eventsItems
           ?.slice(startIndex, endIndex)
           .concat(eventsItems?.slice(0, nextIndex))
       );
-      console.log("Event items : ", eventsItems);
-      console.log("Current events : ", currentEvents);
+      // console.log("Event items : ", eventsItems);
+      // console.log("Current events : ", currentEvents);
     } else {
       setCurrentEvents(eventsItems?.slice(startIndex, endIndex));
     }
@@ -46,10 +48,10 @@ const Event = () => {
 
     // Set up automatic switching every 5 seconds (adjust as needed)
     const interval = setInterval(handleAutoSwitch, 3000);
-
+    // console.log("current events inside useEffect is ", currentEvents);
     // Clear the interval when the component unmounts
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [currentIndex, eventsItems]);
 
   return (
     <div
@@ -75,30 +77,33 @@ const Event = () => {
                   className="object-cover w-full h-full rounded-t-lg"
                 />
                 <p className="absolute bg-[#F1E8D7] text-slate-800 top-0 right-0 text-[11px] sm:text-[14px] w-[30%] h-[13%] p-1 sm:p-2 rounded-bl-md rounded-tr-lg">
-                  {`#${event?.[_event_stat] || "Loading.."}`}
+                  {`#${event?.["_event_stat"] || "Loading.."}`}
                 </p>
               </div>
               <div className="w-[full] h-[50%] flex flex-col ">
                 <p className="w-full h-[10%] pr-3 text-end mt-2">
-                  {event?.[_event_date] || "Loading..."}
+                  {event?.["_event_date"] || "Loading..."}
                 </p>
-                <p className="w-full h-[90%] p-3 sm:leading-loose line-clamp-6 text-[14px] sm:text-[20px]">
-                  {event?.content?.rendered || "Loading..."}
-                </p>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: event?.content?.rendered || "Loading...",
+                  }}
+                  className="w-full h-[90%] p-3 sm:leading-loose line-clamp-6 text-[14px] sm:text-[20px]"
+                ></p>
               </div>
             </div>
           );
         })}
       </div>
 
-      <button
-        className="text-[18px] sm:text-[23.42px] border-4 border-[#FFBF00] hover:bg-[#FFBF00] hover:text-white px-2 sm:px-5 rounded-xl py-1 w-[30%] sm:w-[14%] h-[50px] sm:h-[60px] mt-10"
-        onClick={() => {
-          navigate("/event/present");
-        }}
-      >
-        More
-      </button>
+      <div className="w-full h-[100px] flex items-center justify-center">
+        <button
+          onClick={() => navigate("/event/present")}
+          className="px-44 py-3 rounded-2xl border-2 border-[#FFBF00] font-semibold hover:text-white text-[18px] hover:bg-[#FFBF00]"
+        >
+          More
+        </button>
+      </div>
     </div>
   );
 };

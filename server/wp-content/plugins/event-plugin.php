@@ -48,6 +48,8 @@ function render_event_details_meta_box($post) {
     $event_img = get_post_meta($post->ID, '_event_img', true);
     $event_stat = get_post_meta($post->ID, '_event_stat', true);
     $event_date = get_post_meta($post->ID, '_event_date', true);
+    $event_partner = get_post_meta($post->ID, '_event_partner', true);
+    $event_area = get_post_meta($post->ID, '_event_area', true);
    
     // Use nonce for verification
     wp_nonce_field(basename(__FILE__), 'event_details_nonce');
@@ -98,6 +100,12 @@ function render_event_details_meta_box($post) {
     <label for="event_date">Event Date:</label>
     <input type="text" name="event_date" id="event_date" class="widefat" value="<?php echo esc_attr($event_date); ?>" />
 
+    <label for="event_partner">Event Partner:</label>
+    <input type="text" name="event_partner" id="event_partner" class="widefat" value="<?php echo esc_attr($event_partner); ?>" />
+
+    <label for="event_area">Event Area:</label>
+    <input type="text" name="event_area" id="event_area" class="widefat" value="<?php echo esc_attr($event_area); ?>" />
+
      <?php
 }
 
@@ -119,6 +127,8 @@ function save_event_details_meta($post_id) {
         update_post_meta($post_id, '_event_img', esc_url($_POST['event_img']));
         update_post_meta($post_id, '_event_stat', sanitize_text_field($_POST['event_stat']));
         update_post_meta($post_id, '_event_date', sanitize_text_field($_POST['event_date']));
+        update_post_meta($post_id, '_event_partner', sanitize_text_field($_POST['event_partner'])); 
+        update_post_meta($post_id, '_event_area', sanitize_text_field($_POST['event_area']));
          }
 }
 
@@ -142,6 +152,18 @@ function expose_custom_fields_in_rest() {
         'schema'          => null,
     ));
 
+    register_rest_field('event_type', '_event_partner', array(
+        'get_callback'    => 'get_custom_field',
+        'update_callback' => 'update_custom_field',
+        'schema'          => null,
+    ));
+
+    register_rest_field('event_type', '_event_area', array(
+        'get_callback'    => 'get_custom_field',
+        'update_callback' => 'update_custom_field',
+        'schema'          => null,
+    ));
+
 
 }
 
@@ -153,6 +175,7 @@ function get_custom_field($object, $field_name, $request) {
 function update_custom_field($value, $object, $field_name) {
     return update_post_meta($object->ID, $field_name, $value);
 }
+
 
 add_action('init', 'expose_custom_fields_in_rest');
 add_action('save_post', 'save_event_details_meta');

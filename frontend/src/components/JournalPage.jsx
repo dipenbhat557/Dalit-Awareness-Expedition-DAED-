@@ -1,13 +1,22 @@
 import { useNavigate } from "react-router-dom";
-import { eventBg } from "../assets";
-import { journalConst } from "../constants";
+import { def, eventBg } from "../assets";
+// import { journalConst } from "../constants";
 import { styles } from "../styles";
 import Footer from "./Footer";
 import HeroHeader from "./HeroHeader";
 import SideHero from "./SideHero";
+import useFetch from "./UseFetch";
 
 const JournalPage = () => {
   const navigate = useNavigate();
+  let journals = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/journals`);
+
+  let journalConst = journals?.length >= 2 ? journals.slice(0, 2) : journals;
+
+  const handleMore = () => {
+    journalConst = journals;
+  };
+
   return (
     <div className="w-full h-auto flex flex-col">
       <HeroHeader active="events" />
@@ -35,7 +44,7 @@ const JournalPage = () => {
             future for generations to come.
           </p>
         </div>
-        {journalConst.map((journal, index) => {
+        {journalConst?.map((journal, index) => {
           return (
             <div
               onClick={() =>
@@ -44,19 +53,31 @@ const JournalPage = () => {
               className="flex justify-between cursor-pointer items-center w-full bg-[#FFBF00] p-3 h-[500px] rounded-3xl"
               key={index}
             >
-              <img
-                src={journal.img}
-                className="w-[25%] h-[80%] object-contain"
-              />
+              <div className="w-[25%] h-[80%]">
+                <img
+                  src={journal?.imageUrl || def}
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="h-[80%] w-[65%] flex flex-col p-5 justify-center">
-                <p className="text-[18px] font-semibold">{journal.title}</p>
-                <p className="text-[18px]">{journal.content}</p>
+                <p className="text-[18px] font-semibold">
+                  {journal?.title?.rendered}
+                </p>
+                <p
+                  className="text-[18px]"
+                  dangerouslySetInnerHTML={{
+                    __html: journal?.content?.rendered,
+                  }}
+                ></p>
               </div>
             </div>
           );
         })}
         <div className="w-full h-[100px] flex items-center justify-center">
-          <button className="px-44 py-3 rounded-2xl border-2 border-[#FFBF00] font-semibold hover:text-white text-[18px] hover:bg-[#FFBF00]">
+          <button
+            onClick={handleMore}
+            className="px-44 py-3 rounded-2xl border-2 border-[#FFBF00] font-semibold hover:text-white text-[18px] hover:bg-[#FFBF00]"
+          >
             More
           </button>
         </div>
