@@ -9,7 +9,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentElement(
-        (prevElement) => (prevElement + 1) % heroElements.length,
+        (prevElement) => (prevElement + 1) % heroElements.length
       );
     }, 4000);
 
@@ -41,7 +41,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="w-full h-[500px] sm:h-[756px] relative">
+      <div className="w-full h-[500px] sm:h-[550px] relative">
         <div className="video-container">
           {heroElements.map((element, index) => (
             <div

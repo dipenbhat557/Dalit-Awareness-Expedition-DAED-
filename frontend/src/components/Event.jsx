@@ -1,12 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import { eventsItems } from "../constants";
+// import { eventsItems } from "../constants";
 import { styles } from "../styles";
 // import useFetch from "./UseFetch";
 import { def } from "../assets";
 import { useEffect, useState } from "react";
+import useFetch from "./UseFetch";
 
 const Event = () => {
   const navigate = useNavigate();
+  let eventsItems = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/events`);
 
   // const eventsItems = useFetch(`${import.meta.env.VITE_APP_LOCAL_ROOT}/events`);
   const [currentEvents, setCurrentEvents] = useState([]);
@@ -23,7 +25,8 @@ const Event = () => {
           ?.slice(startIndex, endIndex)
           .concat(eventsItems?.slice(0, nextIndex))
       );
-      // console.log("Current events : ", currentEvents);
+      console.log("Event items : ", eventsItems);
+      console.log("Current events : ", currentEvents);
     } else {
       setCurrentEvents(eventsItems?.slice(startIndex, endIndex));
     }
@@ -67,20 +70,20 @@ const Event = () => {
             >
               <div className="w-full h-[50%] relative">
                 <img
-                  src={event?.img || def}
+                  src={event?.imageUrl || def}
                   alt={`img-${index}`}
                   className="object-cover w-full h-full rounded-t-lg"
                 />
                 <p className="absolute bg-[#F1E8D7] text-slate-800 top-0 right-0 text-[11px] sm:text-[14px] w-[30%] h-[13%] p-1 sm:p-2 rounded-bl-md rounded-tr-lg">
-                  {`#${event?.stat || "Loading.."}`}
+                  {`#${event?.[_event_stat] || "Loading.."}`}
                 </p>
               </div>
               <div className="w-[full] h-[50%] flex flex-col ">
                 <p className="w-full h-[10%] pr-3 text-end mt-2">
-                  {event?.date || "Loading..."}
+                  {event?.[_event_date] || "Loading..."}
                 </p>
                 <p className="w-full h-[90%] p-3 sm:leading-loose line-clamp-6 text-[14px] sm:text-[20px]">
-                  {event?.content || "Loading..."}
+                  {event?.content?.rendered || "Loading..."}
                 </p>
               </div>
             </div>

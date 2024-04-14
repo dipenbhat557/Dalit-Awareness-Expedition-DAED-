@@ -5,6 +5,7 @@ import SideHero from "./SideHero";
 import { journalConst } from "../constants";
 import { styles } from "../styles";
 import Footer from "./Footer";
+import useFetch from "./UseFetch";
 
 const AfterJournalPage = () => {
   const location = useLocation();

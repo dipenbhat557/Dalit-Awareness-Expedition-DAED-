@@ -83,7 +83,7 @@ const Announcement = () => {
               className="w-[95%] h-[90%] object-contain  -z-1 "
             />
             <div className="w-[93%] sm:w-[82%] h-[60%] sm:h-[90%] bg-black absolute bg-opacity-20 hover:bg-opacity-0" />
-            <div className="bg-white w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] top-[45%] text-[#FFBF00] absolute text-3xl hover:bg-red-900 hover:text-white">
+            <div className="bg-white w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] top-[45%] text-[#FFBF00] absolute text-3xl hover:bg-[#FFBF00] hover:text-white">
               <a href={notices?.[currentIndex]?.imageUrl} target="_blank">
                 <AiOutlineSearch />
               </a>
