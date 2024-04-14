@@ -20,9 +20,9 @@ const AfterEvent = () => {
       <div
         className={`${styles.padding} mt-10 h-auto w-full flex flex-col gap-5`}
       >
-        <div className="w-full h-full flex items-center justify-around">
-          <div className="w-[40%] flex flex-col h-[550px] justify-between">
-            <div className="w-full h-[75%]">
+        <div className="w-full h-full flex-col sm:flex-row flex items-center justify-around">
+          <div className="w-[90%] sm:w-[40%] flex flex-col gap-2 h-auto sm:h-[550px] justify-between">
+            <div className="w-full h-[50%] sm:h-[75%]">
               <img
                 src={location?.state?.event?.imageUrl}
                 className=" rounded-t-lg h-full w-full object-cover"
@@ -41,7 +41,7 @@ const AfterEvent = () => {
               />
             </div>
           </div>
-          <div className={`flex w-[55%] h-auto flex-col gap-3 `}>
+          <div className={`flex w-full sm:w-[55%] h-auto flex-col gap-3 `}>
             <p className={`text-[20px]`}>
               {location?.state?.id?.["_event_date"]}
             </p>
@@ -63,7 +63,7 @@ const AfterEvent = () => {
         <div className="w-full flex justify-center">
           <button
             className=" px-16 border-2 border-[#FFBF00] rounded-lg font-semibold hover:text-white hover:bg-[#FFBF00]"
-            onClick={() => navigate("/events/present")}
+            onClick={() => navigate("/event/present")}
           >
             Back
           </button>

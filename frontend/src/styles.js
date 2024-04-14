@@ -4,7 +4,7 @@ const styles = {
   padding: "sm:px-16 px-6 sm:py-6 py-5",
 
   sectionHeadText:
-    "text-dark  md:text-[30px] sm:text-[25px] xs:text-[20px] text-[16px]",
+    "text-dark  md:text-[30px] sm:text-[25px] xs:text-[20px] text-[22px]",
   sectionSubText: "sm:text-[18px] text-[14px]  tracking-wider",
 };
 

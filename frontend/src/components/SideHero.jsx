@@ -13,8 +13,10 @@ const SideHero = ({ title, img }) => {
         <div
           className={`w-full h-full bg-black bg-opacity-20 absolute top-0 left-0 flex flex-col justify-end items-start `}
         >
-          <div className="rounded-t-2xl w-[20%] h-[10%] ml-[5%] text-center pt-2 bg-[#FFBF00]">
-            <p className="text-[25px]  font-semibold">{title}</p>
+          <div className="rounded-t-2xl w-auto p-3 h-[10%] ml-[5%] text-center pt-2 bg-[#FFBF00]">
+            <p className=" text-[20px] sm:text-[25px]  font-semibold">
+              {title}
+            </p>
           </div>
         </div>
       </Suspense>

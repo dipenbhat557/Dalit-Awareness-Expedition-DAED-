@@ -1,4 +1,5 @@
 import { eventBg } from "../assets";
+import { styles } from "../styles";
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";
 import HeroHeader from "./HeroHeader";
@@ -10,7 +11,7 @@ const Contact = () => {
       <HeroHeader active="contactus" />
       <SideHero title="Contact Us" img={eventBg} />
 
-      <div className="flex flex-col  lg:mx-4 mx-auto mb-4  ">
+      <div className={`flex flex-col  lg:mx-4 mx-auto mb-4 ${styles.padding} `}>
         <div className="flex lg:flex-row lg:justify-around justify-around items-center  flex-col ">
           <div className="max-w-[400px] mt-8 ">
             <h1 className="text-xl text-justify">

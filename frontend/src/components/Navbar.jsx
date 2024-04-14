@@ -8,6 +8,8 @@ const Navbar = ({ active }) => {
   const [showDropdown1, setShowDropdown1] = useState(false);
   const [showDropdown2, setShowDropdown2] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const [toggleAbout, setToggleAbout] = useState(false);
+  const [toggleEvent, setToggleEvent] = useState(false);
 
   const toggleDropdown1 = () => {
     setShowDropdown1(!showDropdown1);
@@ -99,7 +101,7 @@ const Navbar = ({ active }) => {
         <ul
           className={`${
             !toggle ? "hidden" : "flex"
-          } p-6 bg-[#ffffff] absolute top-12 right-0 mx-4 my-4 min-w-[140px] z-10 rounded-xl flex flex-col items-end gap-4`}
+          } p-6 bg-[#ffffff]  absolute top-12 right-0 mx-4 my-4 min-w-[140px] z-10 rounded-xl flex flex-col items-end gap-4`}
         >
           {navLinks.map((link) => (
             <li
@@ -107,14 +109,60 @@ const Navbar = ({ active }) => {
               className={`${
                 active === link.title ? "text-black" : "text-black"
               } font-poppins text-[17px]   font-medium cursor-pointer hover:bg-[#D9D9D9] hover:p-1 hover:text-[15px] hover:rounded-md`}
-              onClick={() => {
-                setToggle(!toggle);
-              }}
             >
-              {link.id === "aboutus" || link.id === "events" ? (
-                <a href={link.title}>{link.title}</a>
+              {link.id === "aboutus" ? (
+                <div className="flex flex-col gap-3">
+                  <p
+                    className="font-poppins text-[17px]   font-medium"
+                    onClick={() => {
+                      setToggleAbout(!toggleAbout);
+                      setToggleEvent(false);
+                    }}
+                  >
+                    ABOUT US
+                  </p>
+                  {toggleAbout && (
+                    <>
+                      <a href="/about/us" className="bg-slate-100 pl-2">
+                        About DAED
+                      </a>
+                      <a href="/about/team" className="bg-slate-100 pl-2">
+                        About Team
+                      </a>
+                    </>
+                  )}
+                </div>
+              ) : link.id === "events" ? (
+                <div className="flex flex-col gap-3">
+                  <p
+                    onClick={() => {
+                      setToggleEvent(!toggleEvent);
+                      setToggleAbout(false);
+                    }}
+                    className="font-poppins text-[17px]   font-medium"
+                  >
+                    EVENTS
+                  </p>
+                  {toggleEvent && (
+                    <>
+                      <a href="/event/past" className="bg-slate-100 pl-2">
+                        Past Events
+                      </a>
+                      <a href="/event/present" className="bg-slate-100 pl-2">
+                        Upcoming Events
+                      </a>
+                    </>
+                  )}
+                </div>
               ) : (
-                <a href={link.route}>{link.title}</a>
+                <a
+                  href={link.route}
+                  onClick={() => {
+                    setToggle(!toggle);
+                  }}
+                >
+                  {link.title}
+                </a>
               )}
             </li>
           ))}

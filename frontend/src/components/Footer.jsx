@@ -31,11 +31,13 @@ const Footer = () => {
     >
       <div style={overlayStyle}></div>
       <div className="flex w-[60%] mx-auto h-[30%] gap-3 items-center justify-between">
-        <img
-          src={logo}
-          alt="Deukhuri logo"
-          className="w-[30%] rounded-3xl z-10  bg-white h-full object-contain"
-        />
+        <div className="w-[50%] sm:w-[20%] h-[50%] sm:h-full z-10 ">
+          <img
+            src={logo}
+            alt="Deukhuri logo"
+            className="w-full  rounded-[50%]  bg-white h-full object-contain"
+          />
+        </div>
         <p
           className={` sm:text-[20px] text-[#FFBF00] z-10  text-[16px] text-center w-[70%] tracking-widest `}
         >
@@ -43,7 +45,7 @@ const Footer = () => {
         </p>
       </div>
 
-      <div className="flex w-full h-[65%] justify-between items-start">
+      <div className="flex w-full h-[65%] justify-around sm:justify-between items-start">
         <div className="flex flex-col gap-3 w-[30%] h-full items-center justify-around">
           <div className="flex flex-col w-full h-[35%]">
             <p className="text-[16px] font-semibold text-center sm:text-[18px] text-white z-10">

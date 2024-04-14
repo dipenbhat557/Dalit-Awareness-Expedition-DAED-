@@ -18,7 +18,7 @@ const AboutDAED = () => {
         className={`flex flex-col  justify-between items-start h-auto w-full `}
       >
         <div className={`w-full h-auto   my-5 ${styles.padding}`}>
-          <p className="text-[18px] leading-loose text-justify p-6 border-2 border-slate-500 rounded-md">
+          <p className="text-[16px] sm:text-[18px] leading-relaxed sm:leading-loose text-justify p-6 border-2 border-slate-500 rounded-md">
             The Dalit Awareness Expedition Dang (DAED), established in
             2066/01/07 and registered in the office of 2066/01/07 , is a
             member-based movement-oriented non government organisation (NGO) of
@@ -29,14 +29,16 @@ const AboutDAED = () => {
             children and the ultra poor.
           </p>
         </div>
-        <div className="w-full h-[300px] flex justify-around items-center bg-slate-100">
-          <div className="h-full w-[40%] flex flex-col gap-3 items-center justify-center">
-            <p className="font-semibold text-[29px]">Empowering People's</p>
+        <div className="w-full h-[350px] sm:h-[300px] flex flex-col sm:flex-row justify-around items-center bg-slate-100">
+          <div className="h-[40%] sm:h-full w-[80%] sm:w-[40%] flex flex-col gap-3 items-center justify-center">
+            <p className="font-semibold text-[25px] sm:text-[29px]">
+              Empowering People's
+            </p>
             <p className="font-light text-[14px]">
               Empower, Elevate, Thrive, Inspire
             </p>
           </div>
-          <div className="h-[70%] w-[45%] flex flex-wrap items-center justify-between">
+          <div className="h-[45%] sm:h-[70%] w-[80%] sm:w-[45%] flex flex-wrap items-center justify-between">
             {achievementItems.map((item, index) => {
               return (
                 <div
@@ -51,7 +53,9 @@ const AboutDAED = () => {
                     />
                   </div>
                   <div className="w-[80%] h-[90%] flex flex-col gap-2">
-                    <p className="font-semibold text-[29px]">{item.count}</p>
+                    <p className="font-semibold text-[25px] sm:text-[29px]">
+                      {item.count}
+                    </p>
                     <p className="font-light text-[14px]">{item.content}</p>
                   </div>
                 </div>
@@ -60,14 +64,14 @@ const AboutDAED = () => {
           </div>
         </div>
         <div
-          className={`${styles.padding} bg-[#161618] w-full h-[950px] text-white flex flex-col gap-3`}
+          className={`${styles.padding} bg-[#161618] w-full h-auto sm:h-[950px] text-white flex flex-col gap-3`}
         >
-          <div className="w-full h-[45%] flex justify-between items-center">
-            <div className="w-[30%] h-[90%] flex flex-col items-center justify-around bg-[#23232666] px-6 rounded-md">
+          <div className="w-full sm:h-[45%] h-auto flex flex-col sm:flex-row justify-between items-center sm:gap-0 gap-3">
+            <div className="w-full sm:w-[30%] h-auto sm:h-[90%] flex flex-col items-center justify-around bg-[#23232666] px-6 rounded-md">
               <img
                 src={objective}
                 alt="objective-img"
-                className="w-[50%] h-[20%] object-contain"
+                className="w-[50%] h-[100px] sm:h-[20%] object-contain"
               />
               <p className="font-semibold text-[29px] font-serif">Objective</p>
               <p className="font-medium font-serif">
@@ -77,7 +81,7 @@ const AboutDAED = () => {
                 programme. Rights based advocacy lobbbying{" "}
               </p>
             </div>
-            <div className="w-[30%] h-[90%] flex flex-col items-center justify-around gap-3 bg-[#23232666] px-6 rounded-md">
+            <div className="w-full sm:w-[30%] h-auto sm:h-[90%] flex flex-col items-center justify-around bg-[#23232666] px-6 rounded-md">
               <img
                 src={strength}
                 alt="Strength-img"
@@ -93,7 +97,7 @@ const AboutDAED = () => {
             </div>
           </div>
           <div className="h-full w-full flex items-center justify-center">
-            <div className="w-[30%] h-[90%] flex flex-col items-center justify-around bg-[#23232666] px-6 rounded-md">
+            <div className="w-full h-auto sm:w-[30%] sm:h-[90%] flex flex-col items-center justify-around bg-[#23232666] px-6 rounded-md">
               <img
                 src={vision}
                 alt="Vision-img"

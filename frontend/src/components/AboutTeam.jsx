@@ -19,7 +19,7 @@ const AboutTeam = () => {
         className={`${styles.padding} flex flex-col  justify-between items-start h-auto w-full `}
       >
         <div className={`w-full h-auto   my-5 `}>
-          <p className="text-[18px] leading-loose text-justify p-6 border-2 border-slate-500 rounded-md">
+          <p className="text-[16px] sm:text-[18px] leading-relaxed sm:leading-loose text-justify p-6 border-2 border-slate-500 rounded-md">
             At DAED, we're a passionate and diverse team committed to empowering
             the marginalized Dalit community. With expertise in education,
             community development, and advocacy, we work tirelessly to uplift
@@ -38,7 +38,7 @@ const AboutTeam = () => {
               return (
                 <div
                   key={index}
-                  className="w-[30%] h-[450px]  flex flex-col justify-between gap-3 hover:bg-[#5E490B] hover:text-white"
+                  className="w-full sm:w-[30%] h-[450px]  flex flex-col justify-between gap-3 hover:bg-[#5E490B] hover:text-white"
                 >
                   <div className="w-full h-[75%]">
                     <img
@@ -61,8 +61,8 @@ const AboutTeam = () => {
             })}
           </div>
         </div>
-        <div className="w-full flex items-center justify-between">
-          <p className="h-full leading-loose traking-wide w-[40%] text-[22px]">
+        <div className="w-full flex flex-col sm:flex-row items-center justify-between">
+          <p className="h-full leading-loose traking-wide w-full sm:w-[40%] text-[18px] sm:text-[22px]">
             Our office is located by the Dang, Nepal. "Empower. Elevate.
             Inspire. Thrive." . We’re based in the heart of beautiful Dang, so
             don’t hesitate to visit by bike, boat, or jet ski too. We have an

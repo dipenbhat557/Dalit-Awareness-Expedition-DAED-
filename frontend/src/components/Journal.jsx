@@ -19,21 +19,21 @@ const Journal = () => {
         return (
           <div
             onClick={() => navigate("/afterjournal", { state: { id: index } })}
-            className="flex cursor-pointer justify-between items-center w-full bg-[#FFBF00] p-3 h-[500px] rounded-3xl"
+            className="flex flex-col sm:flex-row cursor-pointer justify-between items-center w-full bg-[#FFBF00] p-3 h-[500px] rounded-3xl"
             key={index}
           >
-            <div className="w-[25%] h-[80%]">
+            <div className="w-[90%] sm:w-[25%] h-[40%] sm:h-[80%]">
               <img
                 src={journal?.imageUrl}
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="h-[80%] w-[65%] flex flex-col p-5 justify-center">
+            <div className="h-[55%] sm:h-[80%] w-[90%] sm:w-[65%] flex flex-col p-5 justify-center">
               <p className="text-[18px] font-semibold">
                 {journal?.title?.rendered}
               </p>
               <p
-                className="text-[18px]"
+                className="text-[14px] sm:text-[18px] line-clamp-6 sm:line-clamp-none"
                 dangerouslySetInnerHTML={{ __html: journal?.content?.rendered }}
               ></p>
             </div>
@@ -43,7 +43,7 @@ const Journal = () => {
       <div className="w-full h-[100px] flex items-center justify-center">
         <button
           onClick={() => navigate("/journals")}
-          className="px-44 py-3 rounded-2xl border-2 border-[#FFBF00] font-semibold hover:text-white text-[18px] hover:bg-[#FFBF00]"
+          className="sm:w-[30%] w-[60%] py-3 rounded-2xl border-2 border-[#FFBF00] font-semibold hover:text-white text-[18px] hover:bg-[#FFBF00]"
         >
           More
         </button>

@@ -76,13 +76,15 @@ const Announcement = () => {
           <p className="w-[50%] text-[13px] sm:text-[16px] font-semibold h-auto my-4">
             {notices?.[currentIndex]?.title?.rendered}
           </p>
-          <div className="w-[80%] h-[95%] relative flex justify-center items-center">
-            <img
-              src={notices?.[currentIndex]?.imageUrl || def}
-              alt="Notice Image"
-              className="w-[95%] h-[90%] object-contain  -z-1 "
-            />
-            <div className="w-[93%] sm:w-[82%] h-[60%] sm:h-[90%] bg-black absolute bg-opacity-20 hover:bg-opacity-0" />
+          <div className="w-[90%] h-[95%] relative flex justify-center items-center">
+            <div className="w-[95%] h-[90%]">
+              <img
+                src={notices?.[currentIndex]?.imageUrl || def}
+                alt="Notice Image"
+                className="w-full h-full object-contain  -z-1 "
+              />
+            </div>
+            <div className="w-[95%] sm:w-[82%] h-[90%] sm:h-[90%] bg-black absolute bg-opacity-20 hover:bg-opacity-0" />
             <div className="bg-white w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] top-[45%] text-[#FFBF00] absolute text-3xl hover:bg-[#FFBF00] hover:text-white">
               <a href={notices?.[currentIndex]?.imageUrl} target="_blank">
                 <AiOutlineSearch />

@@ -99,7 +99,7 @@ const Event = () => {
       <div className="w-full h-[100px] flex items-center justify-center">
         <button
           onClick={() => navigate("/event/present")}
-          className="px-44 py-3 rounded-2xl border-2 border-[#FFBF00] font-semibold hover:text-white text-[18px] hover:bg-[#FFBF00]"
+          className="sm:w-[30%] w-[60%] py-3 rounded-2xl border-2 border-[#FFBF00] font-semibold hover:text-white text-[18px] hover:bg-[#FFBF00]"
         >
           More
         </button>

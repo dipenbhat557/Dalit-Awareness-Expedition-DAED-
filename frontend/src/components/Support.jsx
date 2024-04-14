@@ -1,4 +1,5 @@
 import { eventBg } from "../assets";
+import { styles } from "../styles";
 import Footer from "./Footer";
 import HeroHeader from "./HeroHeader";
 import PayForm from "./PayForm";
@@ -10,10 +11,12 @@ const Support = () => {
       <HeroHeader active="contactus" />
       <SideHero title="Support Us" img={eventBg} />
 
-      <div className="flex lg:flex-row flex-col  lg:justify-around     mb-4  ">
+      <div
+        className={`flex lg:flex-row flex-col  lg:justify-around     mb-4 ${styles.padding} `}
+      >
         <div className="flex lg:flex-row lg:justify-around justify-around items-center  flex-col ">
           <div className="max-w-[400px] mt-8 flex flex-col h-auto gap-4 ">
-            <h1 className="text-xl">
+            <h1 className="text-md sm:text-xl text-justify">
               Join us in our mission to empower Dalit communities, advocating
               for the rights and dignity of the underprivileged lower caste
               individuals.Your support fuels our support to break down barriers,
@@ -31,8 +34,10 @@ const Support = () => {
 
             <div className="my-8 mx-2">
               <div>
-                <h1 className="text-4xl block">Our Adress</h1>
-                <h1 className="block text-2xl">Deukhuri Multiple Campus</h1>
+                <h1 className="text-2xl sm:text-4xl block">Our Adress</h1>
+                <h1 className="block text-xl sm:text-2xl">
+                  Deukhuri Multiple Campus
+                </h1>
               </div>
               <div className="py-4 space-y-4">
                 <h1>Lamahi-6 Dang ,Nepal</h1>

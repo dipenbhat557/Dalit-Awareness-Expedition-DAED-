@@ -26,7 +26,7 @@ const JournalPage = () => {
         className={`flex flex-col sm:flex-row sm:flex-wrap  justify-between gap-3 items-start h-auto w-full ${styles.padding}`}
       >
         <div className="w-full h-auto  border-2 border-slate-500 rounded-md my-5">
-          <p className="text-[18px] leading-loose text-justify p-2">
+          <p className="sm:text-[18px] leading-relaxed sm:leading-loose text-justify p-2">
             "Dalit Awareness Expedition Dang" is a beacon of hope for the
             underprivileged, particularly those belonging to low caste
             communities. Through its dedicated efforts and unwavering
@@ -50,21 +50,21 @@ const JournalPage = () => {
               onClick={() =>
                 navigate("/afterjournal", { state: { id: index } })
               }
-              className="flex justify-between cursor-pointer items-center w-full bg-[#FFBF00] p-3 h-[500px] rounded-3xl"
+              className="flex flex-col sm:flex-row cursor-pointer justify-between items-center w-full bg-[#FFBF00] p-3 h-auto rounded-3xl"
               key={index}
             >
-              <div className="w-[25%] h-[80%]">
+              <div className="w-[90%] sm:w-[25%] h-[40%] sm:h-[80%]">
                 <img
-                  src={journal?.imageUrl || def}
+                  src={journal?.imageUrl}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="h-[80%] w-[65%] flex flex-col p-5 justify-center">
+              <div className="h-[55%] sm:h-[80%] w-[90%] sm:w-[65%] flex flex-col p-5 justify-center">
                 <p className="text-[18px] font-semibold">
                   {journal?.title?.rendered}
                 </p>
                 <p
-                  className="text-[18px]"
+                  className="text-[14px] sm:text-[18px] "
                   dangerouslySetInnerHTML={{
                     __html: journal?.content?.rendered,
                   }}
@@ -76,7 +76,7 @@ const JournalPage = () => {
         <div className="w-full h-[100px] flex items-center justify-center">
           <button
             onClick={handleMore}
-            className="px-44 py-3 rounded-2xl border-2 border-[#FFBF00] font-semibold hover:text-white text-[18px] hover:bg-[#FFBF00]"
+            className="w-[60%] sm:w-[30%] py-3 rounded-2xl border-2 border-[#FFBF00] font-semibold hover:text-white text-[18px] hover:bg-[#FFBF00]"
           >
             More
           </button>
