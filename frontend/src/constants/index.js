@@ -16,10 +16,10 @@ import {
   s1,
   s2,
   s3,
+  img2,
+  img3,
+  img4,
   vid1,
-  vid2,
-  vid3,
-  vid4,
 } from "../assets";
 
 export const navLinks = [
@@ -59,18 +59,22 @@ export const heroElements = [
   {
     video: vid1,
     text: "High Quality Education",
+    type: "video",
   },
   {
-    video: vid2,
+    video: img2,
     text: "Igniting Future Leaders",
+    type: "image",
   },
   {
-    video: vid3,
+    video: img3,
     text: "Home of Quality Education",
+    type: "image",
   },
   {
-    video: vid4,
+    video: img4,
     text: "Fostering Brilliance Here",
+    type: "image",
   },
 ];
 
