@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { eventBg, objective, strength, vision } from "../assets";
+import { aboutUs, eventBg, objective, strength, vision } from "../assets";
 import { styles } from "../styles";
 import Footer from "./Footer";
 import HeroHeader from "./HeroHeader";
@@ -12,7 +12,7 @@ const AboutDAED = () => {
   return (
     <div className="w-full h-auto flex flex-col">
       <HeroHeader active="aboutus" />
-      <SideHero title="About Us" img={eventBg} />
+      <SideHero title="About Us" img={aboutUs} />
 
       <div
         className={`flex flex-col  justify-between items-start h-auto w-full `}

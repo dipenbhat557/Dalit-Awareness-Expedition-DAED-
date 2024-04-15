@@ -1,4 +1,4 @@
-import { eventBg } from "../assets";
+import { aboutUs, eventBg } from "../assets";
 import { teamDAED } from "../constants";
 import { styles } from "../styles";
 import Footer from "./Footer";
@@ -13,7 +13,7 @@ const AboutTeam = () => {
   return (
     <div className="w-full h-auto flex flex-col">
       <HeroHeader active="aboutus" />
-      <SideHero title="Our Team" img={eventBg} />
+      <SideHero title="Our Team" img={aboutUs} />
 
       <div
         className={`${styles.padding} flex flex-col  justify-between items-start h-auto w-full `}
