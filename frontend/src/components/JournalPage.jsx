@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { def, eventBg } from "../assets";
+import { def, eventBg, journal } from "../assets";
 // import { journalConst } from "../constants";
 import { styles } from "../styles";
 import Footer from "./Footer";
@@ -20,7 +20,7 @@ const JournalPage = () => {
   return (
     <div className="w-full h-auto flex flex-col">
       <HeroHeader active="events" />
-      <SideHero title="Journals" img={eventBg} />
+      <SideHero title="Journals" img={journal} />
 
       <div
         className={`flex flex-col sm:flex-row sm:flex-wrap  justify-between gap-3 items-start h-auto w-full ${styles.padding}`}

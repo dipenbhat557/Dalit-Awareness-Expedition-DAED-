@@ -1,4 +1,4 @@
-import { eventBg } from "../assets";
+import { eventBg, supportUs } from "../assets";
 import { styles } from "../styles";
 import Footer from "./Footer";
 import HeroHeader from "./HeroHeader";
@@ -9,7 +9,7 @@ const Support = () => {
   return (
     <div className="w-full h-auto flex flex-col">
       <HeroHeader active="contactus" />
-      <SideHero title="Support Us" img={eventBg} />
+      <SideHero title="Support Us" img={supportUs} />
 
       <div
         className={`flex lg:flex-row flex-col  lg:justify-around     mb-4 ${styles.padding} `}

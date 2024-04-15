@@ -6,7 +6,7 @@ const SideHero = ({ title, img }) => {
       <img
         src={img}
         alt="Past Events Bg"
-        className="w-full h-full object-cover -z-10"
+        className="w-[100%] h-full bottom-0 object-cover -z-1"
       />
 
       <Suspense fallback="Loading">

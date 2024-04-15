@@ -1,4 +1,4 @@
-import { eventBg } from "../assets";
+import { contactUs, eventBg } from "../assets";
 import { styles } from "../styles";
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";
@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <div className="w-full h-auto flex flex-col">
       <HeroHeader active="contactus" />
-      <SideHero title="Contact Us" img={eventBg} />
+      <SideHero title="Contact Us" img={contactUs} />
 
       <div className={`flex flex-col  lg:mx-4 mx-auto mb-4 ${styles.padding} `}>
         <div className="flex lg:flex-row lg:justify-around justify-around items-center  flex-col ">

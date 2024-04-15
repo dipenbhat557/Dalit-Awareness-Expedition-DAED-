@@ -55,21 +55,34 @@ const Hero = () => {
                   index === currentElement ? "video-fade-in" : "video-fade-out"
                 }`}
               >
-                <video
-                  ref={videoRefs[index]}
-                  src={element.video}
-                  title="Video BG"
-                  autoPlay // Autoplay the video
-                  muted
-                  controls={false} // Hide video controls
-                  style={{
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                  }}
-                  className=" object-cover"
-                />
+                {element.type === "video" ? (
+                  <video
+                    ref={videoRefs[index]}
+                    src={element.video}
+                    title="Video BG"
+                    autoPlay // Autoplay the video
+                    muted
+                    controls={false} // Hide video controls
+                    style={{
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    className=" object-cover"
+                  />
+                ) : (
+                  <img
+                    src={element.video}
+                    className="object-cover"
+                    style={{
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+                )}
               </div>
 
               <div
