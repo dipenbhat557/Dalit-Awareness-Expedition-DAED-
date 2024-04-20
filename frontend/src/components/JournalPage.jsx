@@ -25,7 +25,7 @@ const JournalPage = () => {
       <div
         className={`flex flex-col sm:flex-row sm:flex-wrap  justify-between gap-3 items-start h-auto w-full ${styles.padding}`}
       >
-        <div className="w-full h-auto  border-2 border-slate-500 rounded-md my-5">
+        <div className="w-full h-auto border-2 border-slate-500 rounded-md my-5">
           <p className="sm:text-[18px] leading-relaxed sm:leading-loose text-justify p-2">
             "Dalit Awareness Expedition Dang" is a beacon of hope for the
             underprivileged, particularly those belonging to low caste
@@ -44,13 +44,14 @@ const JournalPage = () => {
             future for generations to come.
           </p>
         </div>
+
         {journalConst?.map((journal, index) => {
           return (
             <div
               onClick={() =>
                 navigate("/afterjournal", { state: { id: index } })
               }
-              className="flex flex-col sm:flex-row cursor-pointer justify-between items-center w-full bg-[#FFBF00] p-3 h-auto rounded-3xl"
+              className="flex flex-col sm:flex-row cursor-pointer justify-between items-center w-full bg-[blue] p-3 h-auto rounded-3xl"
               key={index}
             >
               <div className="w-[90%] sm:w-[25%] h-[40%] sm:h-[80%]">

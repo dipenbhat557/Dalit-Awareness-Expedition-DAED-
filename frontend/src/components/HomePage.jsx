@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "./Hero";
+import OurPartner from "./OurPartners";
 import Announcement from "./Announcement";
 import Specification from "./Specification";
 import Message from "./Message";
@@ -16,7 +17,8 @@ const HomePage = () => {
       <HeroHeader active="home" />
       <Hero />
       <Announcement />
-      <Specification />
+      {/* <Specification /> */}
+      <OurPartner></OurPartner>
       <Message />
       <Journal />
       <Event />

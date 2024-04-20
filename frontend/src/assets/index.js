@@ -36,6 +36,7 @@ import a4 from "./achievementImg/a4.svg";
 import objective from "./missionImg/objective.png";
 import strength from "./missionImg/strength.png";
 import vision from "./missionImg/vision.png";
+import sponsor1 from "./sponsors.jpg";
 export {
   logo,
   announce,
@@ -75,4 +76,5 @@ export {
   contactUs,
   supportUs,
   journal,
+  sponsor1,
 };

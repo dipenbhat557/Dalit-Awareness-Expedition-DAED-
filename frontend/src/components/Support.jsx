@@ -9,7 +9,7 @@ const Support = () => {
   return (
     <div className="w-full h-auto flex flex-col">
       <HeroHeader active="contactus" />
-      <SideHero title="Support Us" img={supportUs} />
+      <SideHero title="Support Us" img={supportUs - WUvHQUYc} />
 
       <div
         className={`flex lg:flex-row flex-col  lg:justify-around     mb-4 ${styles.padding} `}
