@@ -9,7 +9,7 @@ const Glimpse = () => {
   return (
     <div className={`${styles.padding} w-full h-[1050px] relative`}>
       <p
-        className={`font-semibold text-[#FFBF00] ${styles.sectionHeadText} pb-10`}
+        className={`font-semibold text-[#0766FF] ${styles.sectionHeadText} pb-10`}
       >
         Glimpses of DAED
       </p>

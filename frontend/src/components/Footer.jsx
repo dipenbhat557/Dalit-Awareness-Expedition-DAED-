@@ -39,7 +39,7 @@ const Footer = () => {
           />
         </div>
         <p
-          className={` sm:text-[20px] text-[#FFBF00] z-10  text-[16px] text-center w-[70%] tracking-widest `}
+          className={` sm:text-[20px] text-[#0766FF] z-10  text-[16px] text-center w-[70%] tracking-widest `}
         >
           The Dalit Awareness Expedition Dang (DAED)
         </p>

@@ -6,12 +6,12 @@ const Subscription = () => {
   return (
     <motion.div
       variants={fadeIn("up", "spring", 0.5, 0.75)}
-      className="flex flex-col w-[100%] h-[330px] sm:h-[300px] justify-center items-center text-white bg-gradient-to-b from-[#FFBF00] to-[#f5e9bf] pt-4"
+      className="flex flex-col w-[100%] h-[330px] sm:h-[300px] justify-center items-center text-white bg-gradient-to-b from-[#0766FF] to-[#0c1d37] pt-4"
     >
       <div className="flex flex-row w-[25%] items-center justify-center mt-2">
-        <div className="w-[8%] h-[5px] border-b-4 border-[#FFAF00]  mr-2 flex-grow" />
+        <div className="w-[8%] h-[5px] border-b-4 border-[#0766FF]  mr-2 flex-grow" />
         <p className="font-extrabold text-xl sm:text-2xl">SUBSCRIPTION</p>
-        <div className="w-[8%] h-[5px] border-b-4 ml-2 border-[#FFAF00] flex-grow" />
+        <div className="w-[8%] h-[5px] border-b-4 ml-2 border-[#0766FF] flex-grow" />
       </div>
       <p className="font-extrabold my-2 sm:my-3 text-[16px] sm:text-[20px]">
         Join our Newsletter
@@ -28,7 +28,7 @@ const Subscription = () => {
         />
         <button
           onClick={handleSubscribe}
-          className="bg-[#FFBF00] font-bold text-white  mt-2 hover:bg-[#FFAF00] ml-3 p-2 px-4 shadow-lg shadow-black  rounded-xl"
+          className="bg-[#0766FF] font-bold text-white  mt-2 hover:bg-[#0766FF] ml-3 p-2 px-4 shadow-lg shadow-black  rounded-xl"
         >
           Subscribe
         </button>

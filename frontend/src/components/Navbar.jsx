@@ -22,12 +22,12 @@ const Navbar = ({ active }) => {
   };
 
   return (
-    <nav className="w-full py-4 z-20 relative bg-transparent">
+    <nav className="w-full py-4 z-20 relative bg-blue-700">
       <ul className="list-none hidden sm:flex sm:justify-around gap-6 relative">
         {navLinks.map((link) => (
           <li
             key={link.id}
-            className={`text-slate-900 text-18px font-semibold sm:cursor-pointer ${
+            className={` text-18px font-semibold text-white sm:cursor-pointer ${
               active === link.title ? "font-extrabold" : ""
             }  hover:text-[#FFBF00] `}
             onClick={() => {
@@ -44,7 +44,7 @@ const Navbar = ({ active }) => {
             {link.id === "aboutus" || link.id === "events" ? (
               <>
                 {link.title}
-                <BiSolidDownArrow className="inline text-black ml-2" />
+                <BiSolidDownArrow className="inline text-white ml-2" />
               </>
             ) : (
               <a href={link.route}>{link.title}</a>
@@ -70,16 +70,16 @@ const Navbar = ({ active }) => {
       )}
 
       {showDropdown2 && (
-        <div className="dropdown-menu mt-2 left-[40%] p-3 rounded-b-xl rounded-r-xl text-black bg-slate-200 w-[14%] absolute z-30">
+        <div className="dropdown-menu mt-2 left-[40%] p-3 rounded-b-xl rounded-r-xl text-black bg-slate-200 w-[15%] absolute z-30">
           <ul>
             <li className="hover:bg-[#D9D9D9]  click:bg-[#FFBF00] p-2 rounded-sm">
               <a href="/event/present" onClick={toggleDropdown2}>
-                Upcoming Events
+                Ongoing Projects
               </a>
             </li>
             <li className="hover:bg-[#D9D9D9]  click:bg-[#FFBF00] p-2 rounded-sm">
               <a href="/event/past" onClick={toggleDropdown2}>
-                Past Events
+                Completed Projects
               </a>
             </li>
           </ul>

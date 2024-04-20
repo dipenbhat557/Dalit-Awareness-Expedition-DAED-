@@ -20,6 +20,7 @@ import {
   img3,
   img4,
   vid1,
+  sponsor1,
 } from "../assets";
 
 export const navLinks = [
@@ -35,12 +36,12 @@ export const navLinks = [
   },
   {
     id: "events",
-    title: "EVENTS",
+    title: "PROJECTS",
     route: "#",
   },
   {
     id: "journals",
-    title: "JOURNALS",
+    title: "PRESS RELEASES",
     route: "/journals",
   },
   {
@@ -58,7 +59,7 @@ export const navLinks = [
 export const heroElements = [
   {
     video: vid1,
-    text: "High Quality Education",
+    text: "Dalit Awareness Programs",
     type: "video",
   },
   {
@@ -68,12 +69,12 @@ export const heroElements = [
   },
   {
     video: img3,
-    text: "Home of Quality Education",
+    text: "Education and Awareness",
     type: "image",
   },
   {
     video: img4,
-    text: "Fostering Brilliance Here",
+    text: "Intersectionality and Solidarity",
     type: "image",
   },
 ];
@@ -111,7 +112,11 @@ export const specConst = [
     content: "200+ members",
   },
 ];
-
+export const sponsors = [
+  {
+    img: sponsor1,
+  },
+];
 export const journalConst = [
   {
     img: j1,

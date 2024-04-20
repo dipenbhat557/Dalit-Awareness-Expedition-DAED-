@@ -16,9 +16,14 @@ const HeroHeader = ({ active }) => {
             className="object-contain w-20 h-20 cursor-pointer"
             onClick={() => navigate("/")}
           />
-          <p className=" text-[12px] text-center sm:text-normal sm:text-[30px] flex items-center text-[#FFBF00] font-semibold">
-            The Dalit Awareness Expedition Dang (DAED)
-          </p>
+          <div className="flex flex-col gap-1 items-center justify-center">
+            <p className=" text-[12px] text-blue-700 text-center sm:text-normal sm:text-[35px] flex items-center  font-extrabold">
+              दलित जागरूकता प्रयास डांग (DAED)
+            </p>
+            <p className=" text-[12px] text-blue-700 text-center sm:text-normal sm:text-[21px] flex items-center  font-bold font-serif italic">
+              The Dalit Awareness Expedition Dang (DAED)
+            </p>
+          </div>
         </div>
       </div>
       <Navbar active={active} />

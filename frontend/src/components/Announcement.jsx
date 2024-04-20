@@ -25,7 +25,7 @@ const Announcement = () => {
           className="h-full w-[10%] object-contain"
         />
         <p
-          className={`${styles.sectionHeadText}  text-[#FFBF00] font-semibold h-full mt-7`}
+          className={`${styles.sectionHeadText}   text-blue-700 font-semibold h-full mt-7`}
         >
           Announcements
         </p>
@@ -43,13 +43,13 @@ const Announcement = () => {
                 <div
                   key={index}
                   className={`${
-                    index == currentIndex ? "border-l-4 border-[#FFBF00] " : ""
+                    index == currentIndex ? "border-l-4 border-[blue] " : ""
                   } w-full h-[70px] border-b-2  flex  items-center pl-4 cursor-pointer`}
                   onClick={() => setCurrentIndex(index)}
                 >
                   <IoMdInformationCircle
                     className={`${
-                      index == currentIndex ? "text-[#FFBF00] " : ""
+                      index == currentIndex ? " text-blue-700 " : ""
                     }`}
                   />
                   <p
@@ -63,7 +63,7 @@ const Announcement = () => {
               );
             })
           ) : (
-            <p className="text-[16px] text-[#FFBF00] font-semibold">
+            <p className="text-[16px]  text-blue-700 font-semibold">
               Loading...
             </p>
           )}
@@ -71,7 +71,7 @@ const Announcement = () => {
 
         <motion.div
           variants={slideIn("right", "tween", 0.2, 1)}
-          className="flex flex-col w-full sm:w-[60%] h-[400px] items-center justify-around border-x-2 pb-9 border-y-2 border-[#FFBF00] rounded-xl p-4"
+          className="flex flex-col w-full sm:w-[60%] h-[400px] items-center justify-around border-x-2 pb-9 border-y-2 border-[blue] rounded-xl p-4"
         >
           <p className="w-[50%] text-[13px] sm:text-[16px] font-semibold h-auto my-4">
             {notices?.[currentIndex]?.title?.rendered}
@@ -85,7 +85,7 @@ const Announcement = () => {
               />
             </div>
             <div className="w-[95%] sm:w-[82%] h-[90%] sm:h-[90%] bg-black absolute bg-opacity-20 hover:bg-opacity-0" />
-            <div className="bg-white w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] top-[45%] text-[#FFBF00] absolute text-3xl hover:bg-[#FFBF00] hover:text-white">
+            <div className="bg-white w-[50px] h-[50px] flex items-center justify-center rounded-full left-[50%] top-[45%]  text-blue-700 absolute text-3xl hover:bg-[blue-700s] hover:text-white">
               <a href={notices?.[currentIndex]?.imageUrl} target="_blank">
                 <AiOutlineSearch />
               </a>
