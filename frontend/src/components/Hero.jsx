@@ -1,10 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import { heroElements } from "../constants";
 import "../index.css";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { translatorState } from "../store";
 
 const Hero = () => {
   const [currentElement, setCurrentElement] = useState(0);
   const videoRefs = heroElements.map(() => useRef(null));
+  const texts = useRecoilValue(translatorState);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -40,7 +43,7 @@ const Hero = () => {
   }, [currentElement, videoRefs]);
 
   return (
-    <>
+    <div className="">
       <div className="w-full h-[500px] sm:h-[550px] relative">
         <div className="video-container">
           {heroElements.map((element, index) => (
@@ -55,21 +58,34 @@ const Hero = () => {
                   index === currentElement ? "video-fade-in" : "video-fade-out"
                 }`}
               >
-                <video
-                  ref={videoRefs[index]}
-                  src={element.video}
-                  title="Video BG"
-                  autoPlay // Autoplay the video
-                  muted
-                  controls={false} // Hide video controls
-                  style={{
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                  }}
-                  className=" object-cover"
-                />
+                {element.type === "video" ? (
+                  <video
+                    ref={videoRefs[index]}
+                    src={element.video}
+                    title="Video BG"
+                    autoPlay // Autoplay the video
+                    muted
+                    controls={false} // Hide video controls
+                    style={{
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    className=" object-cover"
+                  />
+                ) : (
+                  <img
+                    src={element.video}
+                    className="object-cover"
+                    style={{
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+                )}
               </div>
 
               <div
@@ -78,14 +94,14 @@ const Hero = () => {
                 }`}
               >
                 <p className="font-semibold text-white sm:text-[35px] text-[20px] leading-snug tracking-wide md:text-[45px] w-[60%]">
-                  {element.text}
+                  {element.text?.[texts]}
                 </p>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

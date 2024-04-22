@@ -16,41 +16,42 @@ import {
   s1,
   s2,
   s3,
+  img2,
+  img3,
+  img4,
   vid1,
-  vid2,
-  vid3,
-  vid4,
+  sponsor1,
 } from "../assets";
 
 export const navLinks = [
   {
     id: "home",
-    title: "HOME",
+    title: ["HOME", "होम पेज"],
     route: "/",
   },
   {
     id: "aboutus",
-    title: "ABOUT US",
+    title: ["About us", "हाम्रो बारेमा"],
     route: "#",
   },
   {
     id: "events",
-    title: "EVENTS",
+    title: ["Projects", "परियोजनाहरु"],
     route: "#",
   },
   {
     id: "journals",
-    title: "JOURNALS",
+    title: ["Press Release", "प्रेस विज्ञप्ति"],
     route: "/journals",
   },
   {
     id: "contactus",
-    title: "CONTACT US",
+    title: ["Contact", "सम्पर्क"],
     route: "/contactus",
   },
   {
     id: "supportus",
-    title: "SUPPORT US",
+    title: ["Support Us", "मद्दत"],
     route: "/supportus",
   },
 ];
@@ -58,19 +59,23 @@ export const navLinks = [
 export const heroElements = [
   {
     video: vid1,
-    text: "High Quality Education",
+    text: ["Dalit Awareness Programs", "दलित जागरण कार्यक्रमहरू"],
+    type: "video",
   },
   {
-    video: vid2,
-    text: "Igniting Future Leaders",
+    video: img2,
+    text: ["Igniting Future Leaders", "भविष्यको नेता प्रेरित "],
+    type: "image",
   },
   {
-    video: vid3,
-    text: "Home of Quality Education",
+    video: img3,
+    text: ["Education and Awareness", "शिक्षा र जागरण"],
+    type: "image",
   },
   {
-    video: vid4,
-    text: "Fostering Brilliance Here",
+    video: img4,
+    text: ["Intersectionality and Solidarity", "समानता र सघाइता"],
+    type: "image",
   },
 ];
 
@@ -107,7 +112,11 @@ export const specConst = [
     content: "200+ members",
   },
 ];
-
+export const sponsors = [
+  {
+    img: sponsor1,
+  },
+];
 export const journalConst = [
   {
     img: j1,

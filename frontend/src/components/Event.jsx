@@ -5,9 +5,13 @@ import { styles } from "../styles";
 import { def } from "../assets";
 import { useEffect, useState } from "react";
 import useFetch from "./UseFetch";
+import { useRecoilValue } from "recoil";
+import { translatorState } from "../store";
+import { data } from "../translation";
 
 const Event = () => {
   const navigate = useNavigate();
+  const text = useRecoilValue(translatorState);
   let eventsItems = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/events`);
 
   // const eventsItems = useFetch(`${import.meta.env.VITE_APP_LOCAL_ROOT}/events`);
@@ -58,9 +62,9 @@ const Event = () => {
       className={`${styles.padding} h-auto w-full flex flex-col items-center justify-between`}
     >
       <p
-        className={`w-full font-semibold text-[#FFBF00] text-[20px] h-[80px] ${styles.sectionHeadText}`}
+        className={`w-full font-semibold text-[#0766FF] text-[20px] h-[80px] ${styles.sectionHeadText}`}
       >
-        Events
+        {data.events?.[text]}
       </p>
 
       <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between gap-3 items-start h-auto w-full">
@@ -68,7 +72,7 @@ const Event = () => {
           return (
             <div
               key={index}
-              className="flex flex-col justify-around h-[500px] sm:h-[650px] w-full sm:w-[28%] rounded-lg hover:bg-[#FFBF00] hover:text-white"
+              className="flex flex-col justify-around h-[500px] sm:h-[650px] w-full sm:w-[28%] rounded-lg hover:bg-[#0766FF] hover:text-white"
             >
               <div className="w-full h-[50%] relative">
                 <img
@@ -99,7 +103,7 @@ const Event = () => {
       <div className="w-full h-[100px] flex items-center justify-center">
         <button
           onClick={() => navigate("/event/present")}
-          className="sm:w-[30%] w-[60%] py-3 rounded-2xl border-2 border-[#FFBF00] font-semibold hover:text-white text-[18px] hover:bg-[#FFBF00]"
+          className="sm:w-[30%] w-[60%] py-3 rounded-2xl border-2 border-[#0766FF] font-semibold hover:text-white text-[18px] hover:bg-[#0766FF]"
         >
           More
         </button>

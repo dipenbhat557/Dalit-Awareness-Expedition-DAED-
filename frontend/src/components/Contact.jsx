@@ -1,26 +1,26 @@
-import { eventBg } from "../assets";
+import { useRecoilValue } from "recoil";
+import { contactUs, eventBg } from "../assets";
 import { styles } from "../styles";
+import Button from "./Button";
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";
 import HeroHeader from "./HeroHeader";
 import SideHero from "./SideHero";
+import { translatorState } from "../store";
+import { data } from "../translation";
 
 const Contact = () => {
+  const text = useRecoilValue(translatorState);
   return (
     <div className="w-full h-auto flex flex-col">
+      <Button />
       <HeroHeader active="contactus" />
-      <SideHero title="Contact Us" img={eventBg} />
+      <SideHero title={data?.sideHeroHeading2?.[text]} img={contactUs} />
 
       <div className={`flex flex-col  lg:mx-4 mx-auto mb-4 ${styles.padding} `}>
         <div className="flex lg:flex-row lg:justify-around justify-around items-center  flex-col ">
           <div className="max-w-[400px] mt-8 ">
-            <h1 className="text-xl text-justify">
-              {" "}
-              We are just one click away from to help you to put your thought
-              and ideas to incredible heights. Fill in the form to share more
-              details about your inquiry. Or your favourite thoughts. Either
-              way, we'll love to talk about it.
-            </h1>
+            <h1 className="text-xl text-justify">{data?.contacdata?.[text]}</h1>
 
             <div className="my-8 mx-2">
               <div>

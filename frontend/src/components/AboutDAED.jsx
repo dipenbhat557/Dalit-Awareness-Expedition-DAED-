@@ -1,32 +1,31 @@
 import { useNavigate } from "react-router-dom";
-import { eventBg, objective, strength, vision } from "../assets";
+import { aboutUs, eventBg, objective, strength, vision } from "../assets";
 import { styles } from "../styles";
 import Footer from "./Footer";
 import HeroHeader from "./HeroHeader";
 import SideHero from "./SideHero";
 import Subscription from "./Subscription";
-import { achievementItems } from "../constants";
+import { achievementItems, navLinks } from "../constants";
+import Button from "./Button";
+import { useRecoilValue } from "recoil";
+import { translatorState } from "../store";
+import { data } from "../translation";
 
 const AboutDAED = () => {
   const navigate = useNavigate();
+  const text = useRecoilValue(translatorState);
   return (
     <div className="w-full h-auto flex flex-col">
+      <Button />
       <HeroHeader active="aboutus" />
-      <SideHero title="About Us" img={eventBg} />
+      <SideHero title={navLinks?.[1]?.title?.[text]} img={aboutUs} />
 
       <div
         className={`flex flex-col  justify-between items-start h-auto w-full `}
       >
         <div className={`w-full h-auto   my-5 ${styles.padding}`}>
           <p className="text-[16px] sm:text-[18px] leading-relaxed sm:leading-loose text-justify p-6 border-2 border-slate-500 rounded-md">
-            The Dalit Awareness Expedition Dang (DAED), established in
-            2066/01/07 and registered in the office of 2066/01/07 , is a
-            member-based movement-oriented non government organisation (NGO) of
-            Dalit activists and is one of the Dalit human rights NGOs in Nepal.
-            DAED is recognised as one of the major organizations working for the
-            disadvantaged Dalit community empowerment and inclusion, access to
-            education and livelihoods. Its primary target groups are women,
-            children and the ultra poor.
+            {data?.Aboutdaed?.[text]}
           </p>
         </div>
         <div className="w-full h-[350px] sm:h-[300px] flex flex-col sm:flex-row justify-around items-center bg-slate-100">
@@ -73,12 +72,11 @@ const AboutDAED = () => {
                 alt="objective-img"
                 className="w-[50%] h-[100px] sm:h-[20%] object-contain"
               />
-              <p className="font-semibold text-[29px] font-serif">Objective</p>
+              <p className="font-semibold text-[29px] font-serif">
+                {data?.objective?.[text]}
+              </p>
               <p className="font-medium font-serif">
-                DAED is working to eliminate caste based discrimination and
-                untouchability in Nepal through two principle approaches:
-                through media advocacy and through its development
-                programme. Rights based advocacy lobbbying{" "}
+                {data?.objectiveContent?.[text]}
               </p>
             </div>
             <div className="w-full sm:w-[30%] h-auto sm:h-[90%] flex flex-col items-center justify-around bg-[#23232666] px-6 rounded-md">
@@ -87,12 +85,11 @@ const AboutDAED = () => {
                 alt="Strength-img"
                 className="w-[50%] h-[20%] object-contain"
               />
-              <p className="font-semibold text-[29px] font-serif">Strengths</p>
+              <p className="font-semibold text-[29px] font-serif">
+                {data?.strenghts?.[text]}
+              </p>
               <p className="font-medium font-serif">
-                Rights Based Advocacy through lobbying, theatre and drama,
-                interactions and community awareness raising. Media Advocacy
-                through its own TV & Radio production and broadcast facilities.
-                Formal & Informal Education Livelihood Development & Economic 
+                {data?.streghtsContent?.[text]}
               </p>
             </div>
           </div>
@@ -103,15 +100,11 @@ const AboutDAED = () => {
                 alt="Vision-img"
                 className="w-[50%] h-[20%] object-contain"
               />
-              <p className="font-semibold text-[29px] font-serif">Vision</p>
+              <p className="font-semibold text-[29px] font-serif">
+                {data?.vision?.[text]}
+              </p>
               <p className="font-medium font-serif">
-                DAED’s vision is to achieve a justifiable society by eliminating
-                caste based discrimination and untouchability. The organization
-                works to achieve this by creating opportunities for Dalits to
-                access all sectors and levels of government policy making and
-                implementation so that the Dalit peoples can protect and promote
-                their human rights and achieve economic, social, educational and
-                political equality.g
+                {data?.visionContent?.[text]}
               </p>
             </div>
           </div>

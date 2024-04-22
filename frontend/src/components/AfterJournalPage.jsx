@@ -7,6 +7,8 @@ import { styles } from "../styles";
 import Footer from "./Footer";
 import useFetch from "./UseFetch";
 
+import Button from "./Button";
+
 const AfterJournalPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -16,6 +18,7 @@ const AfterJournalPage = () => {
 
   return (
     <div className="w-full h-auto flex flex-col">
+      <Button />
       <HeroHeader active="journals" />
       <SideHero title="Ongoing Projects" img={eventBg} />
 
