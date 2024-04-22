@@ -1,6 +1,9 @@
 import React from "react";
 import { styles } from "../styles";
 import { messageBg, president } from "../assets";
+import { useRecoilValue } from "recoil";
+import { translatorState } from "../store";
+import { data } from "../translation";
 
 const Message = () => {
   const overlayStyle = {
@@ -12,6 +15,7 @@ const Message = () => {
     bottom: 0,
     zIndex: 10,
   };
+  const texts = useRecoilValue(translatorState);
 
   const backgroundImageStyle = {
     backgroundImage: `url(${messageBg})`,
@@ -30,19 +34,15 @@ const Message = () => {
         className={`${styles.padding} w-full sm:w-[40%] h-[60%] overflow-y-hidden sm:h-[80%] flex flex-col  justify-evenly z-20`}
       >
         <p
-          className={` font-semibold text-[#FFBF00] ${styles.sectionHeadText}`}
+          className={` font-semibold text-[#0766FF] ${styles.sectionHeadText}`}
         >
-          Message from our President
+          {data.message?.[texts]}
         </p>
         <p className=" font-medium sm:font-semibold text-[14px] sm:text-[18px] text-white leading-relaxed">
-          As the President of DAED (Democratic Alliance for Economic
-          Development), I would like to convey a message of unity, progress, and
-          inclusivity. Our organization stands committed to fostering economic
-          growth, innovation, and prosperity for all citizens, regardless of
-          background or circumstance.
+          {data.realMessage?.[texts]}
         </p>
-        <p className="font-semibold text-[18px] sm:text-[22px] text-[#FFBF00] w-full text-right">
-          -Shashi Pariyar
+        <p className="font-semibold text-[18px] sm:text-[22px] text-[#0766FF] w-full text-right">
+          {data.messageName?.[texts]}
         </p>
       </div>
       <div className="w-[80%] sm:w-[45%] h-[45%] sm:h-[90%] z-20 pb-2 sm:pb-0">

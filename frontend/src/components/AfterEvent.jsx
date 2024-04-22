@@ -5,6 +5,7 @@ import { eventBg, pdf } from "../assets";
 import { styles } from "../styles";
 import { events } from "../constants";
 import Footer from "./Footer";
+import Button from "./Button";
 
 // location?.state?.id;
 
@@ -14,6 +15,7 @@ const AfterEvent = () => {
 
   return (
     <div className="w-full h-auto flex flex-col">
+      <Button />
       <HeroHeader active="events" />
       <SideHero title="Ongoing Projects" img={eventBg} />
 

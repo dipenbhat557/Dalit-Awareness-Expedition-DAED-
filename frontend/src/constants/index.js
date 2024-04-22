@@ -26,32 +26,32 @@ import {
 export const navLinks = [
   {
     id: "home",
-    title: "HOME",
+    title: ["HOME", "होम पेज"],
     route: "/",
   },
   {
     id: "aboutus",
-    title: "ABOUT US",
+    title: ["About us", "हाम्रो बारेमा"],
     route: "#",
   },
   {
     id: "events",
-    title: "PROJECTS",
+    title: ["Projects", "परियोजनाहरु"],
     route: "#",
   },
   {
     id: "journals",
-    title: "PRESS RELEASES",
+    title: ["Press Release", "प्रेस विज्ञप्ति"],
     route: "/journals",
   },
   {
     id: "contactus",
-    title: "CONTACT US",
+    title: ["Contact", "सम्पर्क"],
     route: "/contactus",
   },
   {
     id: "supportus",
-    title: "SUPPORT US",
+    title: ["Support Us", "मद्दत"],
     route: "/supportus",
   },
 ];
@@ -59,22 +59,22 @@ export const navLinks = [
 export const heroElements = [
   {
     video: vid1,
-    text: "Dalit Awareness Programs",
+    text: ["Dalit Awareness Programs", "दलित जागरण कार्यक्रमहरू"],
     type: "video",
   },
   {
     video: img2,
-    text: "Igniting Future Leaders",
+    text: ["Igniting Future Leaders", "भविष्यको नेता प्रेरित "],
     type: "image",
   },
   {
     video: img3,
-    text: "Education and Awareness",
+    text: ["Education and Awareness", "शिक्षा र जागरण"],
     type: "image",
   },
   {
     video: img4,
-    text: "Intersectionality and Solidarity",
+    text: ["Intersectionality and Solidarity", "समानता र सघाइता"],
     type: "image",
   },
 ];
