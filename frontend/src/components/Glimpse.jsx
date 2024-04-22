@@ -3,15 +3,19 @@ import { styles } from "../styles";
 import { def } from "../assets";
 import { FiEye } from "react-icons/fi";
 import useFetch from "./UseFetch";
+import { useRecoilValue } from "recoil";
+import { translatorState } from "../store";
+import { data } from "../translation";
 
 const Glimpse = () => {
   const glimpses = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/glimpses`);
+  const text = useRecoilValue(translatorState);
   return (
     <div className={`${styles.padding} w-full h-[1050px] relative`}>
       <p
         className={`font-semibold text-[#0766FF] ${styles.sectionHeadText} pb-10`}
       >
-        Glimpses of DAED
+        {data.glimpses?.[text]}
       </p>
       <div className="w-full h-[95%] flex flex-col gap-6">
         <div className="w-full h-[30%] sm:h-[40%] flex justify-between">
@@ -56,7 +60,7 @@ const Glimpse = () => {
 
         {/* Add a separator or additional styling as needed */}
         <p className="text-[#B7B7B7] text-[37px] font-bold my-2">
-          "Empower. Elevate. Inspire. Thrive."
+          {data.gmstext?.[text]}
         </p>
 
         <div className="w-full h-[30%] sm:h-[40%] flex justify-between">

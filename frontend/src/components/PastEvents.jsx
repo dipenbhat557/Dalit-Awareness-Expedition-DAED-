@@ -8,15 +8,21 @@ import Navbar from "./Navbar";
 import SideHero from "./SideHero";
 import Subscription from "./Subscription";
 import useFetch from "./UseFetch";
+import Button from "./Button";
+import { useRecoilValue } from "recoil";
+import { translatorState } from "../store";
+import { data } from "../translation";
 
 const PastEvents = () => {
   let count = 0;
   let events = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/events`);
   let glimpses = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/glimpses`);
+  const text = useRecoilValue(translatorState);
   return (
     <div className="w-full h-auto flex flex-col">
+      <Button />
       <HeroHeader active="events" />
-      <SideHero title="Past Programs" img={eventBg} />
+      <SideHero title={data?.pastevent?.[text]} img={eventBg} />
 
       <div className={`w-full h-auto flex flex-col ${styles.padding} my-20`}>
         <div className="w-full text-center h-[70px] flex items-center justify-center bg-slate-300">
@@ -75,7 +81,7 @@ const PastEvents = () => {
       </div>
       <div className={`w-full h-auto flex flex-col ${styles.padding} `}>
         <p
-          className={` font-semibold text-[#000] bg-[#FFBF00] rounded-xl mb-5 w-[35%] sm:w-[20%]  py-2  text-center ${styles.sectionHeadText}`}
+          className={` font-semibold bg-[#0766FF] text-white rounded-xl mb-5 w-[35%] sm:w-[20%]  py-2  text-center ${styles.sectionHeadText}`}
         >
           Gallery
         </p>

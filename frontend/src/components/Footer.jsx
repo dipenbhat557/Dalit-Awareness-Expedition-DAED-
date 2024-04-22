@@ -1,5 +1,8 @@
+import { useRecoilValue } from "recoil";
 import { facebook, gmail, logo, twitter, footerBg } from "../assets";
 import { styles } from "../styles";
+import { data } from "../translation";
+import { translatorState } from "../store";
 
 const Footer = () => {
   const overlayStyle = {
@@ -11,6 +14,7 @@ const Footer = () => {
     bottom: 0,
     zIndex: 10,
   };
+  const text = useRecoilValue(translatorState);
 
   const backgroundImageStyle = {
     backgroundImage: `url(${footerBg})`,
@@ -39,9 +43,9 @@ const Footer = () => {
           />
         </div>
         <p
-          className={` sm:text-[20px] text-[#0766FF] z-10  text-[16px] text-center w-[70%] tracking-widest `}
+          className={` sm:text-[35px] text-[#0766FF] z-10  text-[16px] text-center w-[70%] tracking-widest `}
         >
-          The Dalit Awareness Expedition Dang (DAED)
+          {data.nameDAED?.[text]}
         </p>
       </div>
 

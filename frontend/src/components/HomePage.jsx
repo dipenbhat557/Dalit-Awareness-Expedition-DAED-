@@ -10,10 +10,13 @@ import Glimpse from "./Glimpse";
 import Subscription from "./Subscription";
 import Footer from "./Footer";
 import HeroHeader from "./HeroHeader";
+import Button from "./Button";
+import { styles } from "../styles";
 
 const HomePage = () => {
   return (
-    <>
+    <div className=" ">
+      <Button />
       <HeroHeader active="home" />
       <Hero />
       <Announcement />
@@ -25,7 +28,7 @@ const HomePage = () => {
       <Glimpse />
       <Subscription />
       <Footer />
-    </>
+    </div>
   );
 };
 

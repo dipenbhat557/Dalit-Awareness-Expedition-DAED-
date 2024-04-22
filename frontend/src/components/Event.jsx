@@ -5,9 +5,13 @@ import { styles } from "../styles";
 import { def } from "../assets";
 import { useEffect, useState } from "react";
 import useFetch from "./UseFetch";
+import { useRecoilValue } from "recoil";
+import { translatorState } from "../store";
+import { data } from "../translation";
 
 const Event = () => {
   const navigate = useNavigate();
+  const text = useRecoilValue(translatorState);
   let eventsItems = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/events`);
 
   // const eventsItems = useFetch(`${import.meta.env.VITE_APP_LOCAL_ROOT}/events`);
@@ -60,7 +64,7 @@ const Event = () => {
       <p
         className={`w-full font-semibold text-[#0766FF] text-[20px] h-[80px] ${styles.sectionHeadText}`}
       >
-        Events
+        {data.events?.[text]}
       </p>
 
       <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between gap-3 items-start h-auto w-full">

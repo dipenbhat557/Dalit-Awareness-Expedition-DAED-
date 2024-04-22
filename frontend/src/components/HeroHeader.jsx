@@ -7,9 +7,9 @@ const HeroHeader = ({ active }) => {
   const navigate = useNavigate();
 
   return (
-    <>
+    <div className="">
       <div className="w-full h-[100px] flex items-center justify-center ">
-        <div className="flex items-center justify-center w-[60%] gap-4 h-full">
+        <div className="flex items-center justify-center w-[70%] gap-4 h-full">
           <img
             src={logo}
             alt="logo"
@@ -27,7 +27,7 @@ const HeroHeader = ({ active }) => {
         </div>
       </div>
       <Navbar active={active} />
-    </>
+    </div>
   );
 };
 

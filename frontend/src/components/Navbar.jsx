@@ -3,6 +3,8 @@ import { navLinks } from "../constants";
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
 import { BiSolidDownArrow } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { translatorState } from "../store";
 
 const Navbar = ({ active }) => {
   const [showDropdown1, setShowDropdown1] = useState(false);
@@ -10,6 +12,7 @@ const Navbar = ({ active }) => {
   const [toggle, setToggle] = useState(false);
   const [toggleAbout, setToggleAbout] = useState(false);
   const [toggleEvent, setToggleEvent] = useState(false);
+  const language = useRecoilValue(translatorState);
 
   const toggleDropdown1 = () => {
     setShowDropdown1(!showDropdown1);
@@ -22,7 +25,7 @@ const Navbar = ({ active }) => {
   };
 
   return (
-    <nav className="w-full py-4 z-20 relative bg-blue-700">
+    <nav className="w-full py-4 z-20 relative bg-blue-700  ">
       <ul className="list-none hidden sm:flex sm:justify-around gap-6 relative">
         {navLinks.map((link) => (
           <li
@@ -43,11 +46,11 @@ const Navbar = ({ active }) => {
           >
             {link.id === "aboutus" || link.id === "events" ? (
               <>
-                {link.title}
+                {link.title?.[language]}
                 <BiSolidDownArrow className="inline text-white ml-2" />
               </>
             ) : (
-              <a href={link.route}>{link.title}</a>
+              <a href={link.route}>{link.title?.[language]}</a>
             )}
           </li>
         ))}

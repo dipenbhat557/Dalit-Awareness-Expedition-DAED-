@@ -6,15 +6,20 @@ import Footer from "./Footer";
 import HeroHeader from "./HeroHeader";
 import SideHero from "./SideHero";
 import useFetch from "./UseFetch";
+import Button from "./Button";
+import { data } from "../translation";
+import { useRecoilValue } from "recoil";
+import { translatorState } from "../store";
 
 const PresentEvents = () => {
   const navigate = useNavigate();
   let events = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/events`);
-
+  const text = useRecoilValue(translatorState);
   return (
     <div className="w-full h-auto flex flex-col">
+      <Button />
       <HeroHeader active="events" />
-      <SideHero title="Present Programs" img={eventBg} />
+      <SideHero title={data?.ongoing?.[text]} img={eventBg} />
 
       <div
         className={`flex flex-col mt-20 sm:flex-row sm:flex-wrap justify-between gap-3 items-start h-auto w-full ${styles.padding}`}
@@ -30,7 +35,7 @@ const PresentEvents = () => {
                 onClick={() =>
                   navigate("/afterevent", { state: { event: event } })
                 }
-                className="cursor-pointer flex flex-col justify-around h-[500px] sm:h-[650px] line-clamp-6 w-full sm:w-[28%] rounded-lg hover:bg-[#FFBF00] hover:text-white"
+                className="cursor-pointer flex flex-col justify-around h-[500px] sm:h-[650px] line-clamp-6 w-full sm:w-[28%] rounded-lg hover:bg-[#0766FF] hover:text-white"
               >
                 <div className="w-full h-[50%] relative">
                   <img

@@ -3,16 +3,19 @@ import { styles } from "../styles";
 // import { journalConst } from "../constants";
 import { useNavigate } from "react-router-dom";
 import useFetch from "./UseFetch";
+import { useRecoilValue } from "recoil";
+import { translatorState } from "../store";
+import { data } from "../translation";
 
 const Journal = () => {
   const navigate = useNavigate();
   let journals = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/journals`);
-
+  const text = useRecoilValue(translatorState);
   let journalConst = journals?.length >= 2 ? journals.slice(0, 2) : journals;
   return (
     <div className={`${styles.padding} w-full h-auto flex flex-col gap-6 `}>
-      <p className={`font-semibold  text-[blue] ${styles.sectionHeadText}`}>
-        Journals
+      <p className={`font-semibold  text-[#0766FF] ${styles.sectionHeadText}`}>
+        {data.journal?.[text]}
       </p>
 
       {journalConst?.map((journal, index) => {

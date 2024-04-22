@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useFetch from "./UseFetch";
 
 const PayForm = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ const PayForm = () => {
     address: "",
     inkindSupport: "",
   });
+  const support = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/payments`);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -95,13 +97,12 @@ const PayForm = () => {
           <h1 className="text-gray-900">
             For cash support, please deposit in our bank account
           </h1>
-          <ul className="list-disc">
-            <li>Account Name</li>
-            <li>Account Number</li>
-            <li>Bank Name: Nepal Investment Bank Ltd</li>
-            <li>Bank Address: Durbar Marg, Kathmandu, Nepal</li>
-            <li>SWIFT CODE:</li>
-          </ul>
+          <ul
+            dangerouslySetInnerHTML={{
+              __html: support?.[0]?.content?.rendered,
+            }}
+            className="list-disc"
+          ></ul>
         </div>
         <div>
           <label

@@ -6,42 +6,33 @@ import Footer from "./Footer";
 import HeroHeader from "./HeroHeader";
 import SideHero from "./SideHero";
 import useFetch from "./UseFetch";
+import Button from "./Button";
+import { useRecoilValue } from "recoil";
+import { translatorState } from "../store";
+import { data } from "../translation";
 
 const JournalPage = () => {
   const navigate = useNavigate();
   let journals = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/journals`);
 
   let journalConst = journals?.length >= 2 ? journals.slice(0, 2) : journals;
-
+  const text = useRecoilValue(translatorState);
   const handleMore = () => {
     journalConst = journals;
   };
 
   return (
     <div className="w-full h-auto flex flex-col">
+      <Button />
       <HeroHeader active="events" />
-      <SideHero title="Journals" img={journal} />
+      <SideHero title={data?.sideHeroHeading1?.[text]} img={journal} />
 
       <div
         className={`flex flex-col sm:flex-row sm:flex-wrap  justify-between gap-3 items-start h-auto w-full ${styles.padding}`}
       >
         <div className="w-full h-auto border-2 border-slate-500 rounded-md my-5">
           <p className="sm:text-[18px] leading-relaxed sm:leading-loose text-justify p-2">
-            "Dalit Awareness Expedition Dang" is a beacon of hope for the
-            underprivileged, particularly those belonging to low caste
-            communities. Through its dedicated efforts and unwavering
-            commitment, the organization tirelessly works towards uplifting
-            marginalized individuals, providing them with opportunities for
-            growth, empowerment, and social justice. The journals featured on
-            its page offer a compelling insight into the transformative impact
-            of their initiatives, shedding light on the stories of resilience,
-            courage, and triumph within these communities. Each entry serves as
-            a testament to the organization's profound dedication to fostering
-            positive change and creating a more inclusive society for all. As
-            readers delve into these journals, they are not only exposed to the
-            challenges faced by the marginalized, but also inspired by the
-            relentless determination to overcome adversity and build a brighter
-            future for generations to come.
+            {data?.pressrealeasedata?.[text]}
           </p>
         </div>
 

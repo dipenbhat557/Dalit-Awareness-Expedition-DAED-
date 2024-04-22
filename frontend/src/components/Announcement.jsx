@@ -8,26 +8,30 @@ import { slideIn } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 import { motion } from "framer-motion";
 import useFetch from "./UseFetch";
+import { useRecoilValue } from "recoil";
+import { translatorState } from "../store";
+import { data } from "../translation";
 
 const Announcement = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const anntext = useRecoilValue(translatorState);
 
   let notices = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/announcements`);
 
   return (
     <>
       <div
-        className={`${styles.paddingX} sm:px-0 flex w-full h-[80px]  gap-1 mt-4`}
+        className={`${styles.paddingX} sm:px-0 flex w-full h-[70px]  gap-1 mt-6`}
       >
         <img
           src={announce}
           alt="announce bg"
-          className="h-full w-[10%] object-contain"
+          className="h-full w-[10%] object-contain "
         />
         <p
-          className={`${styles.sectionHeadText}   text-blue-700 font-semibold h-full mt-7`}
+          className={`${styles.sectionHeadText}   text-[#0766FF] font-semibold h-full mt-3`}
         >
-          Announcements
+          {data.announcement?.[anntext]}
         </p>
       </div>
       <div
@@ -43,13 +47,13 @@ const Announcement = () => {
                 <div
                   key={index}
                   className={`${
-                    index == currentIndex ? "border-l-4 border-[blue] " : ""
+                    index == currentIndex ? "border-l-4 border-[#0766FF] " : ""
                   } w-full h-[70px] border-b-2  flex  items-center pl-4 cursor-pointer`}
                   onClick={() => setCurrentIndex(index)}
                 >
                   <IoMdInformationCircle
                     className={`${
-                      index == currentIndex ? " text-blue-700 " : ""
+                      index == currentIndex ? " text-[#0766FF] " : ""
                     }`}
                   />
                   <p
