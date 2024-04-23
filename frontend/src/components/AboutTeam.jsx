@@ -13,6 +13,13 @@ import { data } from "../translation";
 
 const AboutTeam = () => {
   let teamDAED = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/members`);
+  let teamGeneralDAED = useFetch(
+    `${import.meta.env.VITE_APP_API_ROOT}/general_members`
+  );
+  let teamStaffDAED = useFetch(
+    `${import.meta.env.VITE_APP_API_ROOT}/staff_members`
+  );
+
   const text = useRecoilValue(translatorState);
   return (
     <div className="w-full h-auto flex flex-col">
@@ -51,7 +58,7 @@ const AboutTeam = () => {
                     {item?.title?.rendered}
                   </p>
                   <p
-                    className="text-center px-3 pb-3"
+                    className="font-semibold px-2 pb-3"
                     dangerouslySetInnerHTML={{
                       __html: item?.content?.rendered,
                     }}
@@ -63,36 +70,63 @@ const AboutTeam = () => {
         </div>
         <div className="flex flex-col gap-5 w-full h-auto mb-9 mt-8">
           <p className="text-[20px] font-semibold">Meet Our General Members</p>
-          <div className="w-full text-center h-[70px] flex items-center justify-center bg-slate-300">
-            <div className="w-[26%] h-full flex items-center justify-center font-semibold sm:text-[16px] text-[10px] border-r-2 border-black">
-              Name
-            </div>
-            <div className="w-[22%] h-full flex items-center justify-center font-semibold sm:text-[16px] text-[10px] border-r-2 border-black">
-              Post
-            </div>
-            <div className="w-[23%] h-full flex items-center justify-center font-semibold sm:text-[16px] text-[10px] border-r-2 border-black">
-              Contact Number
-            </div>
-            <div className="w-[20%] h-full flex items-center justify-center font-semibold sm:text-[16px] text-[10px] ">
-              Mail ID
-            </div>
+          <div className="w-full justify-between gap-6 h-auto  flex flex-wrap my-4">
+            {teamGeneralDAED?.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="w-full sm:w-[30%] h-[450px]  flex flex-col justify-between gap-3 hover:bg-[#0766FF] hover:text-white"
+                >
+                  <div className="w-full h-[75%]">
+                    <img
+                      src={item?.imageUrl}
+                      alt="team img"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="font-medium text-[18px] px-3">
+                    {item?.title?.rendered}
+                  </p>
+                  <p
+                    className=" px-3 pb-3"
+                    dangerouslySetInnerHTML={{
+                      __html: item?.content?.rendered,
+                    }}
+                  ></p>
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className="flex flex-col gap-5 w-full h-auto mt-11 mb-9">
           <p className="text-[20px] font-semibold">Meet Our Staff</p>
-          <div className="w-full text-center h-[70px] flex items-center justify-center bg-slate-300">
-            <div className="w-[26%] h-full flex items-center justify-center font-semibold sm:text-[16px] text-[10px] border-r-2 border-black">
-              Name
-            </div>
-            <div className="w-[22%] h-full flex items-center justify-center font-semibold sm:text-[16px] text-[10px] border-r-2 border-black">
-              Post
-            </div>
-            <div className="w-[23%] h-full flex items-center justify-center font-semibold sm:text-[16px] text-[10px] border-r-2 border-black">
-              Contact Number
-            </div>
-            <div className="w-[20%] h-full flex items-center justify-center font-semibold sm:text-[16px] text-[10px] ">
-              Mail ID
-            </div>
+
+          <div className="w-full justify-between gap-6 h-auto  flex flex-wrap my-4">
+            {teamStaffDAED?.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="w-full sm:w-[30%] h-[450px]  flex flex-col justify-between gap-3 hover:bg-[#0766FF] hover:text-white"
+                >
+                  <div className="w-full h-[75%]">
+                    <img
+                      src={item?.imageUrl}
+                      alt="team img"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="font-medium text-[18px] px-3">
+                    {item?.title?.rendered}
+                  </p>
+                  <p
+                    className=" px-3 pb-3"
+                    dangerouslySetInnerHTML={{
+                      __html: item?.content?.rendered,
+                    }}
+                  ></p>
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className="w-full flex flex-col sm:flex-row items-center justify-between">
