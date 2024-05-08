@@ -3,6 +3,7 @@ import { facebook, gmail, logo, twitter, footerBg } from "../assets";
 import { styles } from "../styles";
 import { data } from "../translation";
 import { translatorState } from "../store";
+import { useState } from "react";
 
 const Footer = () => {
   const overlayStyle = {
@@ -27,7 +28,13 @@ const Footer = () => {
     justifyContent: "space-between",
     alignItems: "center",
   };
+  const [facebookProfileLink] = useState(
+    "https://www.facebook.com/profile.php?id=61553630476845&mibextid=JRoKGi"
+  );
 
+  const handleFacebookIconClick = () => {
+    window.location.href = facebookProfileLink;
+  };
   return (
     <div
       className={`${styles.paddingX} w-full h-[420px] flex justify-between flex-col pt-2`}
@@ -73,6 +80,7 @@ const Footer = () => {
                 <img
                   src={facebook}
                   alt="facebook"
+                  onClick={handleFacebookIconClick}
                   className="rounded-full z-10 object-cover cursor-pointer "
                 />
               </div>
@@ -83,13 +91,13 @@ const Footer = () => {
               "Empower. Elevate. Inspire. Thrive."
             </p>
             <p className="text-[14px] sm:text-[16px] text-white z-10">
-              Lamahi-6, Dang, Nepal{" "}
+              Lamahi-6, Dang, Nepal
             </p>
             <p className="text-[14px] sm:text-[16px] text-white z-10">
               +977 9809781908
             </p>
             <p className="text-[14px] sm:text-[16px] text-white z-10">
-              daeddang@gmail.com
+              dacdang2066@gmail.com
             </p>
           </div>
         </div>
