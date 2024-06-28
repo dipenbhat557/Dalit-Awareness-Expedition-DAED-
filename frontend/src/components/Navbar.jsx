@@ -164,7 +164,7 @@ const Navbar = ({ active }) => {
                     setToggle(!toggle);
                   }}
                 >
-                  {link.title}
+                  {link.title?.[language]}
                 </a>
               )}
             </li>
