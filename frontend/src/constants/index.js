@@ -51,7 +51,7 @@ export const navLinks = [
   },
   {
     id: "supportus",
-    title: ["Support Us", "मद्दत"],
+    title: ["Support Us", "सहयोग"],
     route: "/supportus",
   },
 ];
