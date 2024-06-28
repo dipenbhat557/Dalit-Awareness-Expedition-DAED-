@@ -29,7 +29,7 @@ const Footer = () => {
     alignItems: "center",
   };
   const [facebookProfileLink] = useState(
-    "https://www.facebook.com/profile.php?id=61553630476845&mibextid=JRoKGi"
+    "https://www.facebook.com/profile.php?id=61553630476845&mibextid=ZbWKwL"
   );
 
   const handleFacebookIconClick = () => {
@@ -94,7 +94,7 @@ const Footer = () => {
               Lamahi-6, Dang, Nepal
             </p>
             <p className="text-[14px] sm:text-[16px] text-white z-10">
-              +977 9809781908
+              +977 9857840388
             </p>
             <p className="text-[14px] sm:text-[16px] text-white z-10">
               dacdang2066@gmail.com
