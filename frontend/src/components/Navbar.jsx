@@ -60,12 +60,12 @@ const Navbar = ({ active }) => {
           <ul>
             <li className="hover:bg-[#D9D9D9] click:bg-[#FFBF00] p-2 rounded-sm">
               <a href="/about/us" onClick={toggleDropdown1}>
-                About DAED
+                {["About DAED", "DAED को बारेमा"]?.[language]}
               </a>
             </li>
             <li className="hover:bg-[#D9D9D9]  click:bg-[#FFBF00] p-2 rounded-sm">
               <a href="/about/team" onClick={toggleDropdown1}>
-                Our Team
+                {["About Team", "टोलीको बारेमा"]?.[language]}
               </a>
             </li>
           </ul>
@@ -77,12 +77,12 @@ const Navbar = ({ active }) => {
           <ul>
             <li className="hover:bg-[#D9D9D9]  click:bg-[#FFBF00] p-2 rounded-sm">
               <a href="/event/present" onClick={toggleDropdown2}>
-                Ongoing Projects
+                {["Past Events", "विगतका कार्यक्रमहरू"]?.[language]}
               </a>
             </li>
             <li className="hover:bg-[#D9D9D9]  click:bg-[#FFBF00] p-2 rounded-sm">
               <a href="/event/past" onClick={toggleDropdown2}>
-                Completed Projects
+                {["Upcoming Events", "आगामी कार्यक्रमहरू"]?.[language]}
               </a>
             </li>
           </ul>
@@ -122,15 +122,15 @@ const Navbar = ({ active }) => {
                       setToggleEvent(false);
                     }}
                   >
-                    ABOUT US
+                    {link.title?.[language]}
                   </p>
                   {toggleAbout && (
                     <>
                       <a href="/about/us" className="bg-slate-100 pl-2">
-                        About DAED
+                        {["About DAED", "DAED को बारेमा"]?.[language]}
                       </a>
                       <a href="/about/team" className="bg-slate-100 pl-2">
-                        About Team
+                        {["About Team", "टोलीको बारेमा"]?.[language]}
                       </a>
                     </>
                   )}
@@ -144,15 +144,15 @@ const Navbar = ({ active }) => {
                     }}
                     className="font-poppins text-[17px]   font-medium"
                   >
-                    EVENTS
+                    {link.title?.[language]}
                   </p>
                   {toggleEvent && (
                     <>
                       <a href="/event/past" className="bg-slate-100 pl-2">
-                        Past Events
+                        {["Past Events", "विगतका कार्यक्रमहरू"]?.[language]}
                       </a>
                       <a href="/event/present" className="bg-slate-100 pl-2">
-                        Upcoming Events
+                        {["Upcoming Events", "आगामी कार्यक्रमहरू"]?.[language]}
                       </a>
                     </>
                   )}
