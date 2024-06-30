@@ -97,6 +97,9 @@ const PayForm = () => {
           <h1 className="text-gray-900">
             For cash support, please deposit in our bank account
           </h1>
+          <h3>Account Number: 4290100002151001</h3>
+          <h3>Account Holder Name: DALIT SACHETANA ABHIYAN DANG </h3>
+          <h3>Bank Name:RASTRIYA BANIHYA BANK LTD. </h3>
           <ul
             dangerouslySetInnerHTML={{
               __html: support?.[0]?.content?.rendered,
