@@ -91,7 +91,7 @@ const Footer = () => {
               "Empower. Elevate. Inspire. Thrive."
             </p>
             <p className="text-[14px] sm:text-[16px] text-white z-10">
-              Lamahi-6, Dang, Nepal
+              Lamahi-5, Dang, Nepal
             </p>
             <p className="text-[14px] sm:text-[16px] text-white z-10">
               +977 9857840388

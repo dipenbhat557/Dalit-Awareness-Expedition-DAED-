@@ -38,14 +38,14 @@ const Support = () => {
               <div>
                 <h1 className="text-2xl sm:text-4xl block">Our Address</h1>
                 <h1 className="block text-xl sm:text-2xl">
-                  Deukhuri Multiple Campus
+                  Dalit Awareness Expedition Dang
                 </h1>
               </div>
               <div className="py-4 space-y-4">
-                <h1>Lamahi-6 Dang ,Nepal</h1>
+                <h1>Lamahi-5 Dang ,Nepal</h1>
 
-                <h1>+977 9865789, 09846290,089876</h1>
-                <h1>deukhuricampus@gmail.com</h1>
+                <h1>+977 9857840388</h1>
+                <h1>dacdang2066@gmail.com</h1>
               </div>
             </div>
           </div>
